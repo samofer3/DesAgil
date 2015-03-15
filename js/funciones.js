@@ -3,7 +3,7 @@ var $login = $('#login'),
 	$mostrarRegistro = $('#mostrarRegistro'),
 	$mostrarLogin = $('#mostrarLogin');
 
-var buttonRegister = true;
+var buttonRegister = false;
 
 function mostrarLogin(evento){
 	if (!buttonRegister) {

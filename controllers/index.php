@@ -7,4 +7,6 @@
 
 	//compact("language","titulo")
 */
+	session_start();
+	session_destroy();
 	view("index");

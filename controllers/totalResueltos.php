@@ -1,11 +1,12 @@
 <?php
-	include("php/simple_html_dom.php");
+	include_once("php/simple_html_dom.php");
+	include_once("php/sesion.php");
 	//Pagina para obtener datos de cierto usuario
 	//	http://coj.uci.cu/user/useraccount.xhtml?username=gmo
 	// datos class = "col-xs-6"
 
 	//Esta variable tiene que ser obtenida de _SESSION
-	$UsuarioCoj = "gmo";
+	$UsuarioCoj = $_SESSION["usuarioCoj"];
 	$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$UsuarioCoj");
 		//7 es el valor de problemas resueltos, 8 es el valor de problemas intentados
 	$realizados = $html->find('.panel-heading', 7);

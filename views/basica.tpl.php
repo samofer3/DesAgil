@@ -45,6 +45,7 @@
 						<ul>
 							<li><a href="">Cambiar contraseña</a></li>
 							<li><a href="">Eliminar usuario</a></li>
+							<li><a href="salir">Cerrar sesión</a></li>
 						</ul>
 					</div>
 				</li>
