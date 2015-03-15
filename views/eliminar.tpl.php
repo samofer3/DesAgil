@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Total Problemas Resueltos</title>
+	<title>Estructura Basica</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -52,10 +52,9 @@
 			</ul>
 		</nav>
 	</header>
-	<section>
-		<p>Usuario: <strong class="usuario"><?= $UsuarioCoj; ?></strong></p>
-		<p>Problemas totales resueltos: <strong class="personalResultados"><?= $totalRealizados; ?></strong></p>
-		<p>Problemas totales intentados: <strong class="personalResultados"><?= $totalIntentados; ?></strong></p>
+	<section class="center">
+		<p>¿Estás seguro que deseas eliminar tu cuenta del sistema? Si realizas esta acción, ya no podrás iniciar sesión con tus datos y tendrías que registrarte de nuevo.</p>
+		<a id="btnEliminar" class="btnEliminar" href="darDeBaja">Eliminar</a>
 	</section>
 	<footer>
 		<p>Powered by: DesAgil Team</p>
