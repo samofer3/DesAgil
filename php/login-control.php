@@ -37,7 +37,7 @@
 			//Obtengo y extraigo datos de la pagina COJ
 			extract(getDatosUsuario($usuarioCOJ));
 			if ($noExiste) {
-				//Si el usuario no existe en la pagina y termino
+				//Si el usuario no existe en la pagina termino
 				header("Location: ../index?noUsuarioCoj");
 			}else{
 				if ($institucion == "Instituto Tecnológico de Veracruz") {

@@ -1,7 +1,8 @@
 var $login = $('#login'),
 	$registrar = $('#registrar'),
 	$mostrarRegistro = $('#mostrarRegistro'),
-	$mostrarLogin = $('#mostrarLogin');
+	$mostrarLogin = $('#mostrarLogin'),
+	$mensaje = $('#mensaje');
 
 var buttonRegister = false;
 
@@ -11,6 +12,7 @@ function mostrarLogin(evento){
 		$login.show('slow');
 		$mostrarRegistro.removeClass('disableALink');
 		$mostrarLogin.addClass('disableALink');
+		$mensaje.hide('fast');
 		buttonRegister = !buttonRegister;
 	};
 	return false;
@@ -22,6 +24,7 @@ function mostrarRegistro(evento){
 		$registrar.show('slow');
 		$mostrarLogin.removeClass('disableALink');
 		$mostrarRegistro.addClass('disableALink');
+		$mensaje.hide('fast');
 		buttonRegister = !buttonRegister;
 	};
 	return false;

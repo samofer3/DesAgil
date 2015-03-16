@@ -28,6 +28,7 @@
 				<input class="fade marginTop1Em" type="submit" name="entrar_btn" value="Loguearse"/>
 			</fieldset>
 		</form>
+		<p id="mensaje" class="mensaje"><?= $mensaje ?></p>
 		<a href="#" id="mostrarRegistro" class="disableALink activeLoginALink">Registrarse</a>
 		<a href="#" id="mostrarLogin" class="activeLoginALink">Loguearse</a>
 	</section>
