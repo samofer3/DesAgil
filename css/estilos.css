@@ -155,6 +155,13 @@ section{
 	text-align: center;
 }
 
+.disableALink{
+	color: black;
+	cursor: default;
+	text-decoration: none;
+	font-size: 0.8em;
+}
+
 .formulario{
 	text-align: center;
 	margin: 1em;
@@ -164,13 +171,14 @@ section{
 	display: none;
 }
 
-.disableALink{
-	color: black;
-	cursor: default;
-	text-decoration: none;
-	font-size: 0.8em;
+.left{
+	text-align: left;
 }
 
 .marginTop1Em{
 	margin-top: 1em;
+}
+
+.right{
+	text-align: right;
 }

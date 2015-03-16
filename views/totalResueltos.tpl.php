@@ -43,7 +43,7 @@
 					<a href="">Adm. Cuenta <span class="caret"></span></a>
 					<div>
 						<ul>
-							<li><a href="">Cambiar contraseña</a></li>
+							<li><a href="contrasena">Cambiar contraseña</a></li>
 							<li><a href="eliminar">Eliminar usuario</a></li>
 							<li><a href="salir">Cerrar sesión</a></li>
 						</ul>

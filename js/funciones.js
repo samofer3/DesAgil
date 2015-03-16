@@ -2,7 +2,9 @@ var $login = $('#login'),
 	$registrar = $('#registrar'),
 	$mostrarRegistro = $('#mostrarRegistro'),
 	$mostrarLogin = $('#mostrarLogin'),
-	$mensaje = $('#mensaje');
+	$mensaje = $('#mensaje'),
+	$contrasenaNueva = $('#contrasenaNueva'),
+	$contrasenaNueva2 = $('#contrasenaNueva2');
 
 var buttonRegister = false;
 
@@ -30,5 +32,17 @@ function mostrarRegistro(evento){
 	return false;
 }
 
+function obtenerValorInput (evento) {
+	$buttonContrasena = $('#contrasena_btn');
+	$buttonContrasena.attr("disabled", true);
+	$buttonContrasena.val('Contraseñas no coindicen');
+	if ($contrasenaNueva.val() == $contrasenaNueva2.val()) {
+		$buttonContrasena.removeAttr('disabled');
+		$buttonContrasena.val('Actualizar contraseña');
+	};
+}
+
 $mostrarRegistro.click(mostrarRegistro);
 $mostrarLogin.click(mostrarLogin);
+$contrasenaNueva.change(obtenerValorInput);
+$contrasenaNueva2.change(obtenerValorInput);

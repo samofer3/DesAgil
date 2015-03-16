@@ -52,10 +52,17 @@
 			</ul>
 		</nav>
 	</header>
-	<section class="center">
-		<p>¿Estás seguro que deseas eliminar tu cuenta del sistema? Si realizas esta acción, ya no podrás iniciar sesión con tus datos y tendrías que registrarte de nuevo.</p>
-		<a id="btnEliminar" class="btnEliminar" href="darDeBaja">Eliminar</a>
-		<p><?= $mensaje ?></p>
+	<section>
+		<form id="contrasena" name="formularioContrasena" action="cambiarContrasena" class="formulario formularioContrasena" method="post" enctype="application/x-www-form-urlencoded">
+			<fieldset class="fieldsetContrasena right">
+				<legend class="legendContrasena">Actualizar contraseña</legend>
+					<span>Contraseña antigua:</span> <input class="" id="contrasenaVieja" type="password" name="contrasenaVieja_txt" required/></br>
+					<span>Nueva contraseña:</span> <input class="" id="contrasenaNueva" type="password" name="contrasenaNueva_txt" required/></br>
+					<span>Repite tu nueva contraseña:</span> <input class="" id="contrasenaNueva2" type="password" name="contrasenaNueva2_txt" required/></br>
+					<input id="contrasena_btn" class="fade marginTop1Em" type="submit" name="contrasena_btn" value="Actualizar contraseña"/>
+					<p><?= $mensaje ?></p>
+			</fieldset>
+		</form>
 	</section>
 	<footer>
 		<p>Powered by: DesAgil Team</p>
