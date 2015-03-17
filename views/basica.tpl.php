@@ -56,7 +56,7 @@
 		<p>Contenido...</p>
 	</section>
 	<footer>
-		<p>Powered by: DesAgil Team</p>
+		<p>Powered by |</p><p>DesAgil</p><p>Team</p>
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/funciones.js"></script>

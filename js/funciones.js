@@ -11,7 +11,7 @@ var buttonRegister = false;
 function mostrarLogin(evento){
 	if (!buttonRegister) {
 		$registrar.hide('fast');
-		$login.show('slow');
+		$login.show('fast');
 		$mostrarRegistro.removeClass('disableALink');
 		$mostrarLogin.addClass('disableALink');
 		$mensaje.hide('fast');
@@ -23,7 +23,7 @@ function mostrarLogin(evento){
 function mostrarRegistro(evento){
 	if (buttonRegister) {
 		$login.hide('fast');
-		$registrar.show('slow');
+		$registrar.show('fast');
 		$mostrarLogin.removeClass('disableALink');
 		$mostrarRegistro.addClass('disableALink');
 		$mensaje.hide('fast');

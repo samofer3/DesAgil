@@ -18,7 +18,6 @@
 			require $file;
 		} else {
 			header("HTTP/1.0 404 Not Found");
-			echo $file;
 			exit("Pagina no encontrada");
 		}
 
