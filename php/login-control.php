@@ -78,10 +78,16 @@
 			session_start();
 
 			//Declaro mis variables de sesión
-			$_SESSION["autentificado"]=true;
-			$_SESSION["usuario"]=$usuario;
-			$_SESSION["usuarioCoj"]=$usuarioCOJ;
-			$_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
+			$_SESSION["autentificado"] 						= true;
+			$_SESSION["usuario"] 							= $usuario;
+			$_SESSION["usuarioCoj"] 						= $usuarioCOJ;
+			$_SESSION["ultimoAcceso"] 						= date("Y-n-j H:i:s");
+			extract(getProblemasUsuario($usuarioCOJ));
+			$_SESSION["totalRealizados"] 					= $totalRealizados;
+			$_SESSION["totalIntentados"] 					= $totalIntentados;
+			extract(getCalculoProblemas($totalRealizados));
+			$_SESSION["totalProblemas"] 					= $totalProblemas;
+			$_SESSION["porcentajeRealizado"] 				= $porcentajeRealizado;
 
 			header("Location: ../home");
 		}else{

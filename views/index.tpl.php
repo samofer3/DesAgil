@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Index</title>
+	<title>Inicio</title>
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/estilos.css"/>
 </head>

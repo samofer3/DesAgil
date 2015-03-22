@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Estructura Basica</title>
+	<title>Eliminar cuenta</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -51,9 +51,12 @@
 		</nav>
 	</header>
 	<section class="center">
-		<p>¿Estás seguro que deseas eliminar tu cuenta del sistema? Si realizas esta acción, ya no podrás iniciar sesión con tus datos y tendrías que registrarte de nuevo.</p>
-		<a id="btnEliminar" class="btnEliminar" href="darDeBaja">Eliminar</a>
-		<p><?= $mensaje ?></p>
+		<fieldset class="fieldsetEliminar">
+			<legend>Dar de baja</legend>
+			<p class="justify">¿Estás seguro que deseas eliminar tu cuenta del sistema? Si realizas esta acción, ya no podrás iniciar sesión con tus datos y tendrías que registrarte de nuevo.</p>
+			<p><a id="btnEliminar" class="btnEliminar" href="darDeBaja">Eliminar</a></p>
+			<p>Usuario COJ: <strong><?= $mensaje ?></strong></p>
+		</fieldset>
 	</section>
 	<footer>
 		<p>Powered by |</p><p>DesAgil</p><p>Team</p>

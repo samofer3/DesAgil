@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Estructura Basica</title>
+	<title>Contraseña</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 </head>
@@ -54,11 +54,11 @@
 		<form id="contrasena" name="formularioContrasena" action="cambiarContrasena" class="formulario formularioContrasena" method="post" enctype="application/x-www-form-urlencoded">
 			<fieldset class="fieldsetContrasena right">
 				<legend class="legendContrasena">Actualizar contraseña</legend>
-					<span>Contraseña antigua:</span> <input class="" id="contrasenaVieja" type="password" name="contrasenaVieja_txt" required/></br>
-					<span>Nueva contraseña:</span> <input class="" id="contrasenaNueva" type="password" name="contrasenaNueva_txt" required/></br>
-					<span>Repite tu nueva contraseña:</span> <input class="" id="contrasenaNueva2" type="password" name="contrasenaNueva2_txt" required/></br>
-					<input id="contrasena_btn" class="fade marginTop1Em" type="submit" name="contrasena_btn" value="Actualizar contraseña"/>
-					<p><?= $mensaje ?></p>
+					<p><span>Contraseña antigua:</span> <input class="" id="contrasenaVieja" type="password" name="contrasenaVieja_txt" required/></br></p>
+					<p><span>Nueva contraseña:</span> <input class="" id="contrasenaNueva" type="password" name="contrasenaNueva_txt" required/></br></p>
+					<p><span>Repite tu nueva contraseña:</span> <input class="" id="contrasenaNueva2" type="password" name="contrasenaNueva2_txt" required/></br></p>
+					<p><input id="contrasena_btn" class="fade marginTop1Em" type="submit" name="contrasena_btn" value="Actualizar contraseña"/></p>
+					<p class="center"><strong><?= $mensaje ?></strong></p>
 			</fieldset>
 		</form>
 	</section>

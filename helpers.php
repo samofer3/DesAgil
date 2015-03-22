@@ -38,10 +38,36 @@
 			$rangoInstitucion = $html->find('.col-xs-6', 19)->plaintext;
 			$rangoPais		  = $html->find('.col-xs-6', 20)->plaintext;
 			$noExiste = false;
-			return compact("nombre","apellido","sexo","pais","institucion","score","rangoUsuario","rangoInstitucion","rangoPais","noExiste");
+			return compact('nombre','apellido','sexo','pais','institucion','score','rangoUsuario','rangoInstitucion','rangoPais','noExiste');
 		}else{
 			$noExiste = true;
-			return compact("noExiste");
+			return compact('noExiste');
 		}
 
+	}
+
+	function getProblemasUsuario($username){
+		$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$username");
+		//7 es el valor de problemas resueltos, 8 es el valor de problemas intentados
+		$realizados = $html->find('.panel-heading', 7);
+		$totalRealizados = $realizados->find('span',0)->plaintext;
+		$intentados = $html->find('.panel-heading', 8);
+		$totalIntentados = $intentados->find('span',0)->plaintext;
+		return compact('totalRealizados','totalIntentados');
+	}
+
+	function getCalculoProblemas($totalRealizados){
+		$html = file_get_html("http://coj.uci.cu/tables/problems.xhtml?page=10000");
+		$navbuttons = $html->find('a');
+		$posicion = count($navbuttons)-3;
+		$a = $html->find('a',$posicion)->plaintext;
+
+		$html2 = file_get_html("http://coj.uci.cu/tables/problems.xhtml?page=$a");
+		$tr = $html2->find('table',1);
+		$aCount = $tr->getElementsByTagName('tr');
+		$aUltimo = count($aCount)-1;
+
+		$totalProblemas = (($posicion-1)*50)+$aUltimo;
+		$porcentajeRealizado = ceil(($totalRealizados*100)/$totalProblemas);
+		return compact('totalProblemas','porcentajeRealizado');
 	}

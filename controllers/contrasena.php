@@ -1,7 +1,7 @@
 <?php
 	include_once("php/sesion.php");
 
-	$mensaje = "Usuario COJ: " . $_SESSION["usuarioCoj"];
+	$mensaje = "Usuario: " . $_SESSION["usuario"];
 	
 	if (isset($_GET["actualizado"])) {	$mensaje = "Contraseña actualizada con éxito, la próxima vez inicia sesión con tu nueva contraseña.";}
 	if (isset($_GET["noActualizado"])) {$mensaje = "Hubo un problema al intentar actualizar tu contraseña, por favor intenta de nuevo.";}

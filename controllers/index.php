@@ -15,7 +15,6 @@
 	if (isset($_GET["registrado"])) 		{$mensaje = "Registro con éxito, ahora puedes acceder con tus datos";}
 	if (isset($_GET["registradoNo"])) 		{$mensaje = "Ocurrió un problema al registrarte, por favor intenta de nuevo";}
 	if (isset($_GET["usuarioExistente"])) 	{$mensaje = "Tu usuario o usuario COJ ya existe en el sistema";}
-	if (isset($_GET["usuarioNoExistente"])) {$mensaje = "Usuario o contraseña incorrecta, por favor intenta de nuevo";}
-
+	if (isset($_GET["usuarioNoExistente"])) {$mensaje = "Usuario no existente o contraseña incorrecta, por favor intenta de nuevo";}
 
 	view("index",compact("mensaje"));

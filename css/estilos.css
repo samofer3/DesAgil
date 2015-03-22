@@ -8,6 +8,10 @@ a{
 	text-decoration: none;
 }
 
+a:hover{
+	text-decoration: underline;
+}
+
 a.btnEliminar{
 	color: red;
 	font-size: 1.2em;
@@ -17,9 +21,19 @@ div{
 	display: inline-block;
 }
 
+div.linkProblemas{
+	margin-left: 25%;
+	width: 50%;
+}
+
+div.linkProblemas a{
+	margin: auto;
+	padding: 0.1px;
+}
+
 header, section, footer{
 	display: inline-block;
-	height: 10%;
+	height: 11%;
 	margin: 0.2em 0;
 	width: 100%;
 }
@@ -51,6 +65,47 @@ header p::first-letter{
 	text-shadow: 2px 3px 4px rgba(255, 255, 255, 0.5);
 }
 
+fieldset{
+	background : #8A8B82;
+	border-radius: 9px;
+	margin: 0.8em 0.2em;
+	padding: 1.3em;
+	-webkit-box-shadow: 5px 5px 11px 0px rgba(50, 50, 50, 0.9);
+	-moz-box-shadow:    5px 5px 11px 0px rgba(50, 50, 50, 0.9);
+	box-shadow:         5px 5px 11px 0px rgba(50, 50, 50, 0.9);
+}
+
+fieldset.fieldsetContrasena{
+	margin: 9% auto;
+	width: 40%;
+}
+
+fieldset.fieldsetContrasena p{
+	margin: 0.4em auto;
+	margin-right: 3em;
+}
+
+fieldset.datosUsuario{
+	margin: 2.6em auto;
+	padding: 1.5em;
+	width: 70%;
+}
+
+fieldset.fieldsetEliminar{
+	margin: 5.8em auto;
+	text-align: center;
+	padding: 3em;
+	width: 30%;
+}
+
+fieldset.fieldsetEliminar p{
+	margin: 1em auto;
+}
+
+fieldset.fieldsetEliminar p a{
+	font-size: 1.4em;
+}
+
 fieldset.fieldsetIndex{
 	background: #58A8A8;
 	border-radius: 9px;
@@ -65,10 +120,13 @@ fieldset.fieldsetIndex{
 	box-shadow:         5px 5px 11px 0px rgba(50, 50, 50, 0.9);
 }
 
-fieldset.fieldsetIndex legend{
-	color: #142626;
-	font-weight: 600;
-	text-shadow: #56a8a8 0 2px 0px;
+fieldset#home{
+	margin: 1.6em auto;
+	width: 50%;
+}
+
+fieldset#home{
+	text-align: justify;
 }
 
 fieldset input.button{
@@ -88,12 +146,17 @@ fieldset input.button:hover{
 	color: black;
 }
 
+figure#logoCOJ{
+	margin-top: 1.1em;
+}
+
 footer{
 	background: #131313;
 	color: white;
 	font-size: 2em;
-    height: 12%;
+    height: 11%;
     left: 0;
+    margin-bottom: 0;
     text-align: center;
 	width: 100%;
 }
@@ -112,12 +175,21 @@ footer p::first-letter{
 	text-shadow: 2px 3px 4px rgba(88, 168, 168, 0.5);
 }
 
-legend {
+img{
+	border-radius: 1em;
+}
+
+legend{
+	color: #FFFFFF;
+	background: #000000;
+	border-radius: 4px;
+	font-size: 1.2em;
 	margin: auto;
+	padding: 0.1em;
 }
 
 nav {
-	background-color: #fff;
+	background-color: #000000;
 	border: 1px solid #dedede;
 	border-radius: 4px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
@@ -149,6 +221,10 @@ nav > ul > li > a {
 	display: block;
 	line-height: 56px;
 	padding: 0 24px;
+	text-decoration: none;
+}
+
+nav > ul > li > a:hover{
 	text-decoration: none;
 }
 
@@ -215,6 +291,7 @@ nav > ul > li > div ul > li:hover > a {
 	color: #58A8A8;
 	background-color: rgba( 255, 255, 255, 0.1);
 	border-left: 5px solid #58A8A8;
+	text-decoration: none;
 }
 
 nav > ul > li:hover > div {
@@ -234,6 +311,59 @@ section{
 section.sectionLogin{
 	height: 74%;
 }
+
+table td{
+	padding: 0.1em 3em;
+}
+
+table#datosUsuario{
+	margin-left: 20%;
+	padding: 1.8em;
+}
+
+progress[value] {
+  	-webkit-appearance: none;
+    -moz-appearance: none;
+
+  	background: black;
+  	border: none;
+	border-radius: 50px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+  	height: 20px;
+	padding: 2px;
+  	width: 250px;
+}
+
+progress::-moz-progress-bar { 
+	border-radius: 50px;
+    background-image:
+		-moz-linear-gradient(bottom left, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+		-moz-linear-gradient(rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+		-moz-linear-gradient(left, #09c, #f44);
+
+  	background-size: 25px 14px, 100% 100%, 100% 100%;
+  	-moz-animation: move 5s linear 0 infinite;
+}
+
+progress::-webkit-progress-bar {
+	background: black;
+	border-radius: 50px;
+	box-shadow: 0 1px 0px 0 rgba(255, 255, 255, 0.2);
+	-webkit-animation: move 5s linear 0 infinite;
+}
+
+progress::-webkit-progress-value {
+	border-radius: 50px;
+	box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
+background-image:
+	   -webkit-linear-gradient(bottom left, transparent 33%, rgba(0, 0, 0, .1) 33%, rgba(0,0, 0, .1) 66%, transparent 66%),
+	   -webkit-linear-gradient(rgba(255, 255, 255, .25), rgba(0, 0, 0, .25)),
+	   -webkit-linear-gradient(left, #09c, #f44);
+	/* Looks great, now animating it */
+	background-size: 25px 14px, 100% 100%, 100% 100%;
+	-webkit-animation: move 5s linear 0 infinite;
+}
+
 
 .activeLoginALink{
 	font-size: 1.3em;
@@ -278,4 +408,8 @@ section.sectionLogin{
 
 .right{
 	text-align: right;
+}
+
+.justify{
+	text-align: justify;
 }
