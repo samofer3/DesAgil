@@ -13,6 +13,10 @@ a.btnEliminar{
 	font-size: 1.2em;
 }
 
+div{
+	display: inline-block;
+}
+
 header, section, footer{
 	display: inline-block;
 	height: 10%;
@@ -86,12 +90,10 @@ fieldset input.button:hover{
 
 footer{
 	background: #131313;
-	bottom: 0;
 	color: white;
 	font-size: 2em;
     height: 12%;
     left: 0;
-    position: absolute;
     text-align: center;
 	width: 100%;
 }

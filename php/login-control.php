@@ -83,7 +83,7 @@
 			$_SESSION["usuarioCoj"]=$usuarioCOJ;
 			$_SESSION["ultimoAcceso"]= date("Y-n-j H:i:s");
 
-			header("Location: ../totalResueltos");
+			header("Location: ../home");
 		}else{
 			header("Location: ../index?usuarioNoExistente");
 		}

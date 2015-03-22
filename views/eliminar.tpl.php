@@ -16,8 +16,6 @@
 						<ul>
 							<li><a href="totalResueltos">Problemas resueltos - Total</a></li>
 							<li><a href="">Problemas resueltos - Categorias</a></li>
-							<li><a href="">Porcentaje de avance - Total</a></li>
-							<li><a href="">Porcentaje de avance - Categorias</a></li>
 						</ul>
 					</div>
 				</li>

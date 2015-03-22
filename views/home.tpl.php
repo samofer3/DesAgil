@@ -16,8 +16,6 @@
 						<ul>
 							<li><a href="totalResueltos">Problemas resueltos - Total</a></li>
 							<li><a href="">Problemas resueltos - Categorias</a></li>
-							<li><a href="">Porcentaje de avance - Total</a></li>
-							<li><a href="">Porcentaje de avance - Categorias</a></li>
 						</ul>
 					</div>
 				</li>
@@ -52,8 +50,10 @@
 			</ul>
 		</nav>
 	</header>
-	<section>
-		<p>Contenido...</p>
+	<section class="center">
+		<p>Bienvenido <strong><?= $Usuario?></strong> al sistema, tu usuario COJ es: <strong><?= $UsuarioCoj?></strong></p>
+		<p>Desde aquí podrás revisar estadísticas personales e institucionales concerniente a la página Caribbean Online Judge (COJ), cabe mencionar que solo usuarios del Instituto Tecnológico de Veracruz podrán hacer uso de este sistema.</p>
+		<p><strong>¡Sea usted Bienvenido!</strong></p>
 	</section>
 	<footer>
 		<p>Powered by |</p><p>DesAgil</p><p>Team</p>

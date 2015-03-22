@@ -16,8 +16,6 @@
 						<ul>
 							<li><a href="totalResueltos">Problemas resueltos - Total</a></li>
 							<li><a href="">Problemas resueltos - Categorias</a></li>
-							<li><a href="">Porcentaje de avance - Total</a></li>
-							<li><a href="">Porcentaje de avance - Categorias</a></li>
 						</ul>
 					</div>
 				</li>
@@ -56,6 +54,20 @@
 		<p>Usuario: <strong class="usuario"><?= $UsuarioCoj; ?></strong></p>
 		<p>Problemas totales resueltos: <strong class="personalResultados"><?= $totalRealizados; ?></strong></p>
 		<p>Problemas totales intentados: <strong class="personalResultados"><?= $totalIntentados; ?></strong></p>
+		<p>Total de problemas: <strong><?= $totalProblemas ?></strong></p>
+		<p>Porcentaje de avance: <progress value="<?= $porcentajeRealizado; ?>" max="100"></progress> <?= $porcentajeRealizado; ?>%</p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ac" target="_blank">Problemas Aceptados</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=sie" target="_blank">Problemas con Errores internos</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=tle" target="_blank">Problemas con Tiempo Límite excedido</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=mle" target="_blank">Problemas con Límite de memoria excedida</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=wa" target="_blank">Problemas con Respuestas erróneas</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=sle" target="_blank">Problemas con Línea simple a editar</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ce" target="_blank">Problemas con Error de compilación</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=rte" target="_blank">Problemas con Error en tiempo de ejecución</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ole" target="_blank">Problemas con Límite de salida excedido</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=pe" target="_blank">Problemas con Error de presentación</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ivf" target="_blank">Problemas con Función invalida</a></p>
+		<p><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=jdg" target="_blank">Problemas en Revisión</a></p>
 	</section>
 	<footer>
 		<p>Powered by |</p><p>DesAgil</p><p>Team</p>
