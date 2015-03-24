@@ -8,5 +8,7 @@
 	$totalIntentados 		= $_SESSION["totalIntentados"];
 	$totalProblemas 		= $_SESSION["totalProblemas"];
 	$porcentajeRealizado 	= $_SESSION["porcentajeRealizado"];
+	$progressBarArray		= array("", "color2", "color3", "color4");
+	$progressBarColor 		= $progressBarArray[array_rand(array("", "color2", "color3", "color4"))];
 
-	view("totalResueltos", compact('UsuarioCoj','totalRealizados','totalIntentados','totalProblemas','porcentajeRealizado'));
+	view("totalResueltos", compact('UsuarioCoj','totalRealizados','totalIntentados','totalProblemas','porcentajeRealizado','progressBarColor'));

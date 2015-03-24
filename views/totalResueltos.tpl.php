@@ -5,6 +5,7 @@
 	<title>Total Problemas Resueltos</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
+	<link rel="stylesheet" href="css/progressBar.css">
 </head>
 <body>
 	<header>
@@ -72,7 +73,12 @@
 			  </tr>
 			  <tr>
 			    <td>Porcentaje de avance:</td>
-			    <td><progress value="<?= $porcentajeRealizado; ?>" max="100"></progress> <?= $porcentajeRealizado; ?>%</td>
+			    <td>
+			    	<div class="progressbar" data-perc="<?= $porcentajeRealizado; ?>">
+						<div class="bar <?= $progressBarColor; ?>"><span></span></div>
+						<div class="label"><span></span></div>
+					</div>
+				</td>
 			  </tr>
 			</table>
 		</fieldset>
@@ -113,5 +119,6 @@
 	</footer>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/funciones.js"></script>
+	<script src="js/progressBar.js"></script>
 </body>
 </html>
