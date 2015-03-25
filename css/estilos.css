@@ -321,6 +321,16 @@ table#datosUsuario{
 	padding: 1.8em;
 }
 
+table#comparacion{
+	text-align: justify;
+	margin-left: 20%;
+	padding: 1.8em;
+}
+
+table#comparacion td{
+	padding: 0.1em 1em;
+}
+
 progress[value] {
   	-webkit-appearance: none;
     -moz-appearance: none;

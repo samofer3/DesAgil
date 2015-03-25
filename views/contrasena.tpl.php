@@ -23,7 +23,7 @@
 					<a href="">Comparativo <span class="caret"></span></a>
 					<div>
 						<ul>
-							<li><a href="">Usuarios ITVER</a></li>
+							<li><a href="compararItver">Usuarios ITVER</a></li>
 							<li><a href="">Usuarios Externos</a></li>
 							<li><a href="">Primeros nivel nacional</a></li>
 						</ul>

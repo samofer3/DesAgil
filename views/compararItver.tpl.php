@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Total Problemas Resueltos</title>
+	<title>Compararte con otros alumnos del ITVER</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/progressBar.css">
@@ -52,6 +52,23 @@
 		</nav>
 	</header>
 	<section>
+		<form id="compararItver" name="formularioCompararI" action="cambiarContrasena" class="formulario" method="post" enctype="application/x-www-form-urlencoded">
+			<fieldset class="datosUsuario">
+				<legend class="legendContrasena">Comparar con</legend>
+					<table id="comparacion">
+					  <tr>
+					    <td><span>Seleccionar de los 30 mejores:</span></td>
+					    <td><select class="" id="usuarioACompararSelect" name="usuarioAComparar_slc" ><?= $opciones ?></select></td>
+					  </tr>
+					  <tr>
+					    <td><span>Buscar por nombre específico:</span></td>
+					    <td><input class="" id="usuarioAComparar" type="text" name="usuarioAComparar_txt"/></td>
+					  </tr>
+					</table>
+					<p><input id="comparar_btn" class="fade marginTop1Em" type="submit" name="comparar_btn" value="Comparar"/></p>
+					<p class="center"><strong><?= $mensaje ?></strong></p>
+			</fieldset>
+		</form>
 		<fieldset class="datosUsuario">
 			<legend>Datos de usuario</legend>
 			<table id="datosUsuario">
@@ -68,51 +85,48 @@
 			    <td><strong class="personalResultados"><?= $totalIntentados; ?></strong></td>
 			  </tr>
 			  <tr>
-			    <td>Total de problemas:</td>
-			    <td><strong><?= $totalProblemas ?></strong></td>
-			  </tr>
-			  <tr>
 			    <td>Porcentaje de avance:</td>
 			    <td>
 			    	<div class="progressbar" data-perc="<?= $porcentajeRealizado; ?>">
-						<div class="bar <?= $progressBarColor; ?>"><span></span></div>
+						<div class="bar <?= $progressBarColor[0]; ?>"><span></span></div>
 						<div class="label"><span></span></div>
 					</div>
 				</td>
 			  </tr>
 			</table>
 		</fieldset>
-		<div class="linkProblemas">
-		<fieldset>
-			<legend>Ver lista de problemas según:</legend>
-			<table>
+		<fieldset class="datosUsuario">
+			<legend>Datos de usuario</legend>
+			<table id="datosUsuario">
 			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ac" target="_blank">Aceptados</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=sie" target="_blank">Errores internos</a></br></td>
+			    <td>Usuario:</td>
+			    <td><strong class="usuario"><?= $UsuarioCoj; ?></strong></td>
 			  </tr>
 			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=tle" target="_blank">Tiempo Límite excedido</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=mle" target="_blank">Límite de memoria excedida</a></br></td>
+			    <td>Problemas totales resueltos:</td>
+			    <td><strong class="personalResultados"><?= $totalRealizados; ?></strong></td>
 			  </tr>
 			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=wa" target="_blank">Respuestas erróneas</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=sle" target="_blank">Línea simple a editar</a></br></td>
+			    <td>Problemas totales intentados:</td>
+			    <td><strong class="personalResultados"><?= $totalIntentados; ?></strong></td>
 			  </tr>
 			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ce" target="_blank">Error de compilación</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=rte" target="_blank">Error en tiempo de ejecución</a></br></td>
-			  </tr>
-			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ole" target="_blank">Límite de salida excedido</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=pe" target="_blank">Error de presentación</a></br></td>
-			  </tr>
-			  <tr>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=ivf" target="_blank">Función invalida</a></td>
-			    <td><a href="http://coj.uci.cu/24h/status.xhtml?username=<?= $UsuarioCoj?>&status=jdg" target="_blank">Revisión</a></td>
+			    <td>Porcentaje de avance:</td>
+			    <td>
+			    	<div class="progressbar" data-perc="<?= $porcentajeRealizado; ?>">
+						<div class="bar <?= $progressBarColor[1]; ?>"><span></span></div>
+						<div class="label"><span></span></div>
+					</div>
+				</td>
 			  </tr>
 			</table>
 		</fieldset>
-		</div>
+		<fieldset class="diferenciaProblemas">
+			<legend>Problemas realizados que $usuario no ha hecho</legend>
+		</fieldset>
+		<fieldset class="diferenciaProblemas">
+			<legend>Problemas no realizados que $usuario ha hecho</legend>
+		</fieldset>
 	</section>
 	<footer>
 		<p>Powered by |</p><p>DesAgil</p><p>Team</p>

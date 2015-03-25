@@ -46,6 +46,21 @@
 
 	}
 
+	function getNombres30Itver(){
+		$html = file_get_html("http://coj.uci.cu/tables/usersinstitutionrank.xhtml?inst_id=8175");
+		$table 		= $html->find('table',1);
+		$aTotal 	= $table->find('a[title]');
+		$resultado	= array();
+		$contador 	= 0;
+		foreach ($aTotal as $a) {
+			$nombre = $a->innertext;
+			$opcion = preg_replace("/[^a-zA-Z]+/", "", $nombre);
+			$resultado[$contador] = $opcion;
+			$contador++;
+		}
+		return compact('resultado');
+	}
+
 	function getProblemasUsuario($username){
 		$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$username");
 		//7 es el valor de problemas resueltos, 8 es el valor de problemas intentados
@@ -67,7 +82,18 @@
 		$aCount = $tr->getElementsByTagName('tr');
 		$aUltimo = count($aCount)-1;
 
-		$totalProblemas = (($posicion-1)*50)+$aUltimo;
+		$totalProblemas = (($a-1)*50)+$aUltimo;
 		$porcentajeRealizado = ceil(($totalRealizados*100)/$totalProblemas);
 		return compact('totalProblemas','porcentajeRealizado');
+	}
+
+	function converterArrayToSelect($array, $UsuarioCoj){
+		$opciones = "<option value='nada'>---</option>";
+		for ($i=0; $i < count($array); $i++) { 
+			if ($array[$i] != $UsuarioCoj) {
+				$opciones .=  "<option value='$array[$i]'>$array[$i]</option>";
+			}
+		}
+
+		return $opciones;
 	}
