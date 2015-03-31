@@ -399,6 +399,14 @@ background-image:
 	text-decoration: none;
 }
 
+.displayBlock{
+	display: block;
+}
+
+.displayNone{
+	display: none;
+}
+
 .formulario{
 	text-align: center;
 	margin: 1em;

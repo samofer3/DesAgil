@@ -54,7 +54,7 @@
 		$contador 	= 0;
 		foreach ($aTotal as $a) {
 			$nombre = $a->innertext;
-			$opcion = preg_replace("/[^a-zA-Z]+/", "", $nombre);
+			$opcion = preg_replace("/[^a-zA-Z0-9]+/", "", $nombre);
 			$resultado[$contador] = $opcion;
 			$contador++;
 		}
@@ -88,7 +88,7 @@
 	}
 
 	function converterArrayToSelect($array, $UsuarioCoj){
-		$opciones = "<option value='nada'>---</option>";
+		$opciones = "<option value=''>---</option>";
 		for ($i=0; $i < count($array); $i++) { 
 			if ($array[$i] != $UsuarioCoj) {
 				$opciones .=  "<option value='$array[$i]'>$array[$i]</option>";

@@ -52,7 +52,7 @@
 		</nav>
 	</header>
 	<section>
-		<form id="compararItver" name="formularioCompararI" action="cambiarContrasena" class="formulario" method="post" enctype="application/x-www-form-urlencoded">
+		<form id="compararItver" name="formularioCompararI" action="compararItver" class="formulario" method="get" enctype="application/x-www-form-urlencoded">
 			<fieldset class="datosUsuario">
 				<legend class="legendContrasena">Comparar con</legend>
 					<table id="comparacion">
@@ -65,67 +65,56 @@
 					    <td><input class="" id="usuarioAComparar" type="text" name="usuarioAComparar_txt"/></td>
 					  </tr>
 					</table>
-					<p><input id="comparar_btn" class="fade marginTop1Em" type="submit" name="comparar_btn" value="Comparar"/></p>
+					<p><input id="comparar_btn" class="fade marginTop1Em" type="submit"/></p>
 					<p class="center"><strong><?= $mensaje ?></strong></p>
 			</fieldset>
 		</form>
 		<fieldset class="datosUsuario">
-			<legend>Datos de usuario</legend>
+			<legend>Datos de usuario <?= $usuarioPropio['UsuarioCoj']; ?></legend>
 			<table id="datosUsuario">
 			  <tr>
-			    <td>Usuario:</td>
-			    <td><strong class="usuario"><?= $UsuarioCoj; ?></strong></td>
-			  </tr>
-			  <tr>
 			    <td>Problemas totales resueltos:</td>
-			    <td><strong class="personalResultados"><?= $totalRealizados; ?></strong></td>
+			    <td><strong class="personalResultados"><?= $usuarioPropio['totalRealizados']; ?></strong></td>
 			  </tr>
 			  <tr>
 			    <td>Problemas totales intentados:</td>
-			    <td><strong class="personalResultados"><?= $totalIntentados; ?></strong></td>
+			    <td><strong class="personalResultados"><?= $usuarioPropio['totalIntentados']; ?></strong></td>
 			  </tr>
 			  <tr>
 			    <td>Porcentaje de avance:</td>
 			    <td>
-			    	<div class="progressbar" data-perc="<?= $porcentajeRealizado; ?>">
-						<div class="bar <?= $progressBarColor[0]; ?>"><span></span></div>
+			    	<div class="progressbar" data-perc="<?= $usuarioPropio['porcentajeRealizado']; ?>">
+						<div class="bar <?= $usuarioPropio['progressBarColor']; ?>"><span></span></div>
 						<div class="label"><span></span></div>
 					</div>
 				</td>
 			  </tr>
 			</table>
 		</fieldset>
-		<fieldset class="datosUsuario">
-			<legend>Datos de usuario</legend>
+		<fieldset class="datosUsuario <?= $classFieldset ?>">
+			<legend>Datos de usuario <?= $usuarioComparar['UsuarioCoj']; ?></legend>
 			<table id="datosUsuario">
 			  <tr>
-			    <td>Usuario:</td>
-			    <td><strong class="usuario"><?= $UsuarioCoj; ?></strong></td>
-			  </tr>
-			  <tr>
 			    <td>Problemas totales resueltos:</td>
-			    <td><strong class="personalResultados"><?= $totalRealizados; ?></strong></td>
+			    <td><strong class="personalResultados"><?= $usuarioComparar['totalRealizados']; ?></strong></td>
 			  </tr>
 			  <tr>
 			    <td>Problemas totales intentados:</td>
-			    <td><strong class="personalResultados"><?= $totalIntentados; ?></strong></td>
+			    <td><strong class="personalResultados"><?= $usuarioComparar['totalIntentados']; ?></strong></td>
 			  </tr>
 			  <tr>
 			    <td>Porcentaje de avance:</td>
-			    <td>
-			    	<div class="progressbar" data-perc="<?= $porcentajeRealizado; ?>">
-						<div class="bar <?= $progressBarColor[1]; ?>"><span></span></div>
+				<td>
+			    	<div class="progressbar" data-perc="<?= $usuarioComparar['porcentajeRealizado']; ?>">
+						<div class="bar"><span></span></div>
 						<div class="label"><span></span></div>
 					</div>
 				</td>
 			  </tr>
 			</table>
 		</fieldset>
-		<fieldset class="diferenciaProblemas">
-			<legend>Problemas realizados que $usuario no ha hecho</legend>
-		</fieldset>
-		<fieldset class="diferenciaProblemas">
-			<legend>Problemas no realizados que $usuario ha hecho</legend>
+		<fieldset class="<?= $classFieldset ?> datosUsuario diferenciaProblemas">
+			<legend>Diferencias entre usuarios</legend>
 		</fieldset>
 	</section>
 	<footer>
