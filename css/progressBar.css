@@ -1,19 +1,19 @@
 
 .progressbar{
-    position:relative;
-    display:block;
+    position: relative;
+    display: inline-block;
     width:300px;
     height:20px;
     padding:10px 20px;
     border-bottom:1px solid rgba(255,255,255,0.25);
     border-radius:16px;
-    margin:20px auto;
+    margin:5px 5px;
     -webkit-box-shadow: 0px 4px 4px -4px rgba(255, 255, 255, 0.4),0px -3px 3px -3px rgba(255, 255, 255, 0.25),inset 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
     box-shadow: 0px 4px 4px -4px rgba(255, 255, 255, 0.4),0px -3px 3px -3px rgba(255, 255, 255, 0.25),inset 0px 0px 12px 0px rgba(0, 0, 0, 0.5);
 }
 .progressbar:before{
     position:absolute;
-    display:block;
+    display: inline-block;
     content:"";
     width:298px;
     height:18px;

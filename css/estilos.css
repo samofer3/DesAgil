@@ -321,6 +321,26 @@ table#datosUsuario{
 	padding: 1.8em;
 }
 
+table#diferenciaProblemas{
+	margin-bottom: 1em;
+	width: 90%;
+}
+
+table#diferenciaProblemas td{
+	border-bottom: 1px solid black;
+	padding: 2em 3em;
+	text-align: right;
+}
+
+table#diferenciaProblemas td:nth-child(odd){
+	border-right: 1px solid black;
+	width: 20%;
+}
+
+table#diferenciaProblemas td:nth-child(even){
+	width: 80%;
+}
+
 table#comparacion{
 	text-align: justify;
 	margin-left: 20%;

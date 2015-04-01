@@ -113,8 +113,51 @@
 			  </tr>
 			</table>
 		</fieldset>
-		<fieldset class="<?= $classFieldset ?> datosUsuario diferenciaProblemas">
-			<legend>Diferencias entre usuarios</legend>
+		<fieldset class="<?= $classFieldset ?> datosUsuario diferenciaProblemas center">
+			<legend><?= $usuarioPropio['UsuarioCoj'];?> VS <?= $usuarioComparar['UsuarioCoj']; ?></legend>
+			<table id="diferenciaProblemas">
+			  <tr>
+			    <td>Comparaciones de problemas resueltos entre usuarios:</td>
+				<td>
+			    	<?= $usuarioPropio['UsuarioCoj'];?>
+			    	<div class="progressbar" data-perc="<?= $porReaU1; ?>">
+						<div class="bar <?= $usuarioPropio['progressBarColor']; ?>"><span></span></div>
+						<div class="label"><span></span></div>
+					</div></br>
+					<?= $usuarioComparar['UsuarioCoj']; ?>
+					<div class="progressbar" data-perc="<?= $porReaU2; ?>">
+						<div class="bar"><span></span></div>
+						<div class="label"><span></span></div>
+					</div></br>
+					Ambos
+					<div class="progressbar" data-perc="<?= $porReaBo; ?>">
+						<div class="bar color3"><span></span></div>
+						<div class="label"><span></span></div>
+					</div>
+				</td>
+			  </tr>
+			  <tr>
+			    <td>Comparaciones de problemas intentados entre usuarios:</td>
+				<td>
+			    	<?= $usuarioPropio['UsuarioCoj'];?>
+			    	<div class="progressbar" data-perc="<?= $porIntU1; ?>">
+						<div class="bar <?= $usuarioPropio['progressBarColor']; ?>"><span></span></div>
+						<div class="label"><span></span></div>
+					</div></br>
+					<?= $usuarioComparar['UsuarioCoj']; ?>
+					<div class="progressbar" data-perc="<?= $porIntU2; ?>">
+						<div class="bar"><span></span></div>
+						<div class="label"><span></span></div>
+					</div></br>
+					Ambos
+					<div class="progressbar" data-perc="<?= $porIntBo; ?>">
+						<div class="bar color3"><span></span></div>
+						<div class="label"><span></span></div>
+					</div>
+				</td>
+			  </tr>
+			</table>
+			<a href="<?= $link; ?>">Ver estadísticas COJ</a>
 		</fieldset>
 	</section>
 	<footer>

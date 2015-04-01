@@ -97,3 +97,30 @@
 
 		return $opciones;
 	}
+
+	function getComparacion($usuario1, $usuario2){
+		$html = file_get_html("http://coj.uci.cu/user/compareusers.xhtml?uid1=$usuario1&uid2=$usuario2&submit=Compare");
+		$variables[0] = $html->find('.panel-heading', 3)->plaintext;
+		$variables[1] = $html->find('.panel-heading', 4)->plaintext;
+		$variables[2] = $html->find('.panel-heading', 5)->plaintext;
+		$variables[3] = $html->find('.panel-heading', 6)->plaintext;
+		$variables[4] = $html->find('.panel-heading', 7)->plaintext;
+		$variables[5] = $html->find('.panel-heading', 8)->plaintext;
+		
+		$solveForUser1 	= preg_replace("/[^0-9]+/", "", $variables[0]);
+		$solveForBoth 	= preg_replace("/[^0-9]+/", "", $variables[1]);
+		$solveForUser2 	= preg_replace("/[^0-9]+/", "", $variables[2]);
+		$triedForUser1 	= preg_replace("/[^0-9]+/", "", $variables[3]);
+		$triedForBoth 	= preg_replace("/[^0-9]+/", "", $variables[4]);
+		$triedForUser2 	= preg_replace("/[^0-9]+/", "", $variables[5]);
+
+		$totalProblemas = $_SESSION["totalProblemas"];
+		$porReaU1 = ceil(($solveForUser1*100)/$totalProblemas);
+		$porReaBo = ceil(($solveForBoth*100)/$totalProblemas);
+		$porReaU2 = ceil(($solveForUser2*100)/$totalProblemas);
+		$porIntU1 = ceil(($triedForUser1*100)/$totalProblemas);
+		$porIntBo = ceil(($triedForBoth*100)/$totalProblemas);
+		$porIntU2 = ceil(($triedForUser2*100)/$totalProblemas);
+
+		return compact('solveForUser1','solveForBoth','solveForUser2','triedForUser1','triedForBoth','triedForUser2','porReaU1','porReaBo','porReaU2','porIntU1','porIntBo','porIntU2');
+	}
