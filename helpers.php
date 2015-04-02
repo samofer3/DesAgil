@@ -37,13 +37,16 @@
 			$rangoUsuario	  = $html->find('.col-xs-6', 18)->plaintext;
 			$rangoInstitucion = $html->find('.col-xs-6', 19)->plaintext;
 			$rangoPais		  = $html->find('.col-xs-6', 20)->plaintext;
+			$realizados = $html->find('.panel-heading', 7);
+			$totalRealizados = $realizados->find('span',0)->plaintext;
+			$intentados = $html->find('.panel-heading', 8);
+			$totalIntentados = $intentados->find('span',0)->plaintext;
 			$noExiste = false;
-			return compact('nombre','apellido','sexo','pais','institucion','score','rangoUsuario','rangoInstitucion','rangoPais','noExiste');
+			return compact('nombre','apellido','sexo','pais','institucion','score','rangoUsuario','rangoInstitucion','rangoPais','noExiste','totalRealizados','totalIntentados');
 		}else{
 			$noExiste = true;
 			return compact('noExiste');
 		}
-
 	}
 
 	function getNombres30Itver(){
@@ -74,16 +77,6 @@
 			$contador++;
 		}
 		return compact('resultado');
-	}
-	
-	function getProblemasUsuario($username){
-		$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$username");
-		//7 es el valor de problemas resueltos, 8 es el valor de problemas intentados
-		$realizados = $html->find('.panel-heading', 7);
-		$totalRealizados = $realizados->find('span',0)->plaintext;
-		$intentados = $html->find('.panel-heading', 8);
-		$totalIntentados = $intentados->find('span',0)->plaintext;
-		return compact('totalRealizados','totalIntentados');
 	}
 
 	function getCalculoProblemas($totalRealizados){

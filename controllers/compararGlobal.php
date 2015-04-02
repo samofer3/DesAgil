@@ -39,7 +39,6 @@
 			extract(getDatosUsuario($compararCon));
 			if (!$noExiste) {
 				$classFieldset = "displayBlock";
-				extract(getProblemasUsuario($compararCon));
 				extract(getCalculoProblemas($totalRealizados));
 				$usuarioComparar = array(
 				'UsuarioCoj' 			=> $compararCon,

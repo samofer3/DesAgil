@@ -76,13 +76,12 @@
 
 			//inicio la sesion
 			session_start();
-
+			extract(getDatosUsuario($usuarioCOJ));
 			//Declaro mis variables de sesión
 			$_SESSION["autentificado"] 						= true;
 			$_SESSION["usuario"] 							= $usuario;
 			$_SESSION["usuarioCoj"] 						= $usuarioCOJ;
 			$_SESSION["ultimoAcceso"] 						= date("Y-n-j H:i:s");
-			extract(getProblemasUsuario($usuarioCOJ));
 			$_SESSION["totalRealizados"] 					= $totalRealizados;
 			$_SESSION["totalIntentados"] 					= $totalIntentados;
 			extract(getCalculoProblemas($totalRealizados));

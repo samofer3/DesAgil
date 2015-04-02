@@ -40,7 +40,6 @@
 			if (!$noExiste) {
 				if ($institucion == "Instituto Tecnológico de Veracruz") {
 					$classFieldset = "displayBlock";
-					extract(getProblemasUsuario($compararCon));
 					extract(getCalculoProblemas($totalRealizados));
 					$usuarioComparar = array(
 					'UsuarioCoj' 			=> $compararCon,
