@@ -14,7 +14,7 @@
 		'progressBarColor'		=> "color4"
 	);
 	
-	extract(getNombres30Itver());
+	$resultado = $_SESSION["itver30"];
 	$opciones = converterArrayToSelect($resultado, $usuarioPropio['UsuarioCoj']);
 
 	if (isset($_GET['noExiste'])) {

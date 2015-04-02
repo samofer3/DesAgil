@@ -88,7 +88,10 @@
 			extract(getCalculoProblemas($totalRealizados));
 			$_SESSION["totalProblemas"] 					= $totalProblemas;
 			$_SESSION["porcentajeRealizado"] 				= $porcentajeRealizado;
-
+			extract(getNombres30Itver());
+			$_SESSION["itver30"] 							= $resultado;
+			extract(getNombres30Global());
+			$_SESSION["global30"] 							= $resultado;
 			header("Location: ../home");
 		}else{
 			header("Location: ../index?usuarioNoExistente");

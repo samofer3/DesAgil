@@ -61,6 +61,21 @@
 		return compact('resultado');
 	}
 
+	function getNombres30Global(){
+		$html = file_get_html("http://coj.uci.cu/tables/usersrank.xhtml");
+		$table 		= $html->find('table',1);
+		$aTotal 	= $table->find('a[title]');
+		$resultado	= array();
+		$contador 	= 0;
+		foreach ($aTotal as $a) {
+			$nombre = $a->innertext;
+			$opcion = preg_replace("/[^a-zA-Z0-9]+/", "", $nombre);
+			$resultado[$contador] = $opcion;
+			$contador++;
+		}
+		return compact('resultado');
+	}
+	
 	function getProblemasUsuario($username){
 		$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$username");
 		//7 es el valor de problemas resueltos, 8 es el valor de problemas intentados
@@ -100,12 +115,12 @@
 
 	function getComparacion($usuario1, $usuario2){
 		$html = file_get_html("http://coj.uci.cu/user/compareusers.xhtml?uid1=$usuario1&uid2=$usuario2&submit=Compare");
-		$variables[0] = $html->find('.panel-heading', 3)->plaintext;
+		$variables[0] = $html->find('.panel-heading', 3)->children(1)->plaintext;
 		$variables[1] = $html->find('.panel-heading', 4)->plaintext;
-		$variables[2] = $html->find('.panel-heading', 5)->plaintext;
-		$variables[3] = $html->find('.panel-heading', 6)->plaintext;
+		$variables[2] = $html->find('.panel-heading', 5)->children(1)->plaintext;
+		$variables[3] = $html->find('.panel-heading', 6)->children(1)->plaintext;
 		$variables[4] = $html->find('.panel-heading', 7)->plaintext;
-		$variables[5] = $html->find('.panel-heading', 8)->plaintext;
+		$variables[5] = $html->find('.panel-heading', 8)->children(1)->plaintext;
 		
 		$solveForUser1 	= preg_replace("/[^0-9]+/", "", $variables[0]);
 		$solveForBoth 	= preg_replace("/[^0-9]+/", "", $variables[1]);

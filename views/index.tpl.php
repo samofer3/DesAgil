@@ -5,6 +5,7 @@
 	<title>Inicio</title>
 	<link rel="stylesheet" href="css/normalize.css"/>
 	<link rel="stylesheet" href="css/estilos.css"/>
+	<link rel="shortcut icon" href="img/coj_favicon.png">
 </head>
 <body>
 	<header class="index">
@@ -32,9 +33,7 @@
 		<a href="#" id="mostrarRegistro" class="disableALink activeLoginALink">Registrarse</a>
 		<a href="#" id="mostrarLogin" class="activeLoginALink">Loguearse</a>
 	</section>
-	<footer>
-		<p>Powered by |</p><p>DesAgil</p><p>Team</p>
-	</footer>
+	<?php include("views/footer.tpl.php"); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 	<script src="js/funciones.js"></script>
 </body>

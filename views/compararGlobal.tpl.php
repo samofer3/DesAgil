@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
-	<title>Compararte con otros alumnos del ITVER</title>
+	<title>Compararte con cualquier alumno</title>
 	<link rel="stylesheet" href="css/normalize.css">
 	<link rel="stylesheet" href="css/estilos.css">
 	<link rel="stylesheet" href="css/progressBar.css">
@@ -11,7 +11,7 @@
 <body>
 	<?php include("views/header.tpl.php"); ?>
 	<section>
-		<form id="compararItver" name="formularioCompararI" action="compararItver" class="formulario" method="get" enctype="application/x-www-form-urlencoded">
+		<form id="compararItver" name="formularioCompararI" action="compararGlobal" class="formulario" method="get" enctype="application/x-www-form-urlencoded">
 			<fieldset class="datosUsuario">
 				<legend class="legendContrasena">Comparar con</legend>
 					<table id="comparacion">
