@@ -39,8 +39,12 @@
 			$rangoPais		  = $html->find('.col-xs-6', 20)->plaintext;
 			$realizados = $html->find('.panel-heading', 7);
 			$totalRealizados = $realizados->find('span',0)->plaintext;
-			$intentados = $html->find('.panel-heading', 8);
-			$totalIntentados = $intentados->find('span',0)->plaintext;
+			if ($username == "ReynaldoGil") {
+				$totalIntentados = 0;
+			} else {
+				$intentados = $html->find('.panel-heading', 8);
+				$totalIntentados = $intentados->find('span',0)->plaintext;
+			}
 			$noExiste = false;
 			return compact('nombre','apellido','sexo','pais','institucion','score','rangoUsuario','rangoInstitucion','rangoPais','noExiste','totalRealizados','totalIntentados');
 		}else{
@@ -72,7 +76,7 @@
 		$contador 	= 0;
 		foreach ($aTotal as $a) {
 			$nombre = $a->innertext;
-			$opcion = preg_replace("/[^a-zA-Z0-9]+/", "", $nombre);
+			$opcion = preg_replace("/[^a-zA-Z0-9_]+/", "", $nombre);
 			$resultado[$contador] = $opcion;
 			$contador++;
 		}
@@ -95,6 +99,12 @@
 		return compact('totalProblemas','porcentajeRealizado');
 	}
 
+	function getPorcentajeRealizado($totalRealizados){
+		$totalProblemas = $_SESSION["totalProblemas"];
+		$porcentajeRealizado = ceil(($totalRealizados*100)/$totalProblemas);
+		return $porcentajeRealizado;
+	}
+
 	function converterArrayToSelect($array, $UsuarioCoj){
 		$opciones = "<option value=''>---</option>";
 		for ($i=0; $i < count($array); $i++) { 
@@ -102,7 +112,6 @@
 				$opciones .=  "<option value='$array[$i]'>$array[$i]</option>";
 			}
 		}
-
 		return $opciones;
 	}
 
