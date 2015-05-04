@@ -6,7 +6,7 @@
 					<div>
 						<ul>
 							<li><a href="totalResueltos">Problemas resueltos - Total</a></li>
-							<li><a href="">Problemas resueltos - Categorias</a></li>
+							<li><a href="totalCategorias">Problemas resueltos - Categorias</a></li>
 						</ul>
 					</div>
 				</li>
@@ -16,16 +16,18 @@
 						<ul>
 							<li><a href="compararItver">Usuarios ITVER</a></li>
 							<li><a href="compararGlobal">Usuarios Global</a></li>
+							<li><a href="#">Usuarios según categorías</a></li>
 							<li><a href="compararTopItver">Primeros nivel ITVER</a></li>
 							<li><a href="compararTop">Primeros nivel nacional</a></li>
+							<li><a href="compararProblema">Comparador de problema</a></li>
 						</ul>
 					</div>
 				</li>
 				<li>
-					<a href="">Global <span class="caret"></span></a>
+					<a href="">Actualización de datos <span class="caret"></span></a>
 					<div>
 						<ul>
-							<li><a href="">Usuarios totales</a></li>
+							<li><a href="actualizarCategorias">Actualizar categorías</a></li>
 						</ul>
 					</div>
 				</li>

@@ -53,6 +53,24 @@
 		}
 	}
 
+	function getArrayProblemasUser($username){
+		$html = file_get_html("http://coj.uci.cu/user/useraccount.xhtml?username=$username");
+		$arreglo = array();
+		if ($html) {
+			$realizados = $html->getElementById('#probsACC');
+			$a = $realizados->find('a');
+
+			foreach ($a as $key) {
+				$valor = trim($key->plaintext);
+				$arreglo["$valor"] = $valor;
+			}
+		}else{
+			$arreglo["noExiste"] = true;
+		}
+		return $arreglo;
+	}
+
+
 	function getNombres30Itver(){
 		$html = file_get_html("http://coj.uci.cu/tables/usersinstitutionrank.xhtml?inst_id=8175");
 		$table 		= $html->find('table',1);
@@ -61,7 +79,7 @@
 		$contador 	= 0;
 		foreach ($aTotal as $a) {
 			$nombre = $a->innertext;
-			$opcion = preg_replace("/[^a-zA-Z0-9]+/", "", $nombre);
+			$opcion = preg_replace("/[^a-zA-Z0-9_]+/", "", $nombre);
 			$resultado[$contador] = $opcion;
 			$contador++;
 		}
@@ -140,4 +158,156 @@
 		$porIntU2 = ceil(($triedForUser2*100)/$totalProblemas);
 
 		return compact('solveForUser1','solveForBoth','solveForUser2','triedForUser1','triedForBoth','triedForUser2','porReaU1','porReaBo','porReaU2','porIntU1','porIntBo','porIntU2');
+	}
+	
+	function getArraysProblemasDB(){
+		include_once("php/conexion.php");
+
+		$AdHoc 				= array();
+		$ArithmeticAlgebra 	= array();
+		$BruteForce 		= array();
+		$Combination 		= array();
+		$DataStructures 	= array();
+		$DynamicProgramming = array();
+		$GameTheory 		= array();
+		$Geometry 			= array();
+		$GraphTheory 		= array();
+		$Greedy 			= array();
+		$NumberTheory 		= array();
+		$SortingSearching 	= array();
+		$Strings 			= array();
+
+		$consulta = "SELECT * FROM problemas WHERE categorias_idCategorias = 25 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$AdHoc["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 1 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$ArithmeticAlgebra["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 2 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$BruteForce["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 3 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$Combination["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 4 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$DataStructures["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 5 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$DynamicProgramming["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 6 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$GameTheory["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 7 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$Geometry["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 23 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$GraphTheory["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 8 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$Greedy["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 9 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$NumberTheory["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 10 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$SortingSearching["$idProblema"] = $nombre;
+		}
+
+		$consulta ="SELECT * FROM problemas WHERE categorias_idCategorias = 24 ORDER BY idproblemas";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$idProblema 	= $registro["idproblemas"];
+			$nombre 		= $registro["nombre"];
+			//$idCategoria 	= $registro["categorias_idCategorias"];
+			$Strings["$idProblema"] = $nombre;
+		}
+
+		$conexion->close();
+
+		return compact('AdHoc','ArithmeticAlgebra','BruteForce','Combination','DataStructures','DynamicProgramming','GameTheory','Geometry','GraphTheory','Greedy','NumberTheory','SortingSearching','Strings');
 	}
