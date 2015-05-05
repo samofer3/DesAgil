@@ -80,8 +80,10 @@
 		foreach ($aTotal as $a) {
 			$nombre = $a->innertext;
 			$opcion = preg_replace("/[^a-zA-Z0-9_]+/", "", $nombre);
-			$resultado[$contador] = $opcion;
-			$contador++;
+			if (strcmp($opcion, "iclassfafaplugi")) {
+				$resultado[$contador] = $opcion;
+				$contador++;
+			}
 		}
 		return compact('resultado');
 	}
@@ -95,8 +97,10 @@
 		foreach ($aTotal as $a) {
 			$nombre = $a->innertext;
 			$opcion = preg_replace("/[^a-zA-Z0-9_]+/", "", $nombre);
-			$resultado[$contador] = $opcion;
-			$contador++;
+			if (strcmp($opcion, "iclassfafaplugi")) {
+				$resultado[$contador] = $opcion;
+				$contador++;
+			}
 		}
 		return compact('resultado');
 	}
@@ -188,10 +192,67 @@
 
 		return compact('AdHocFecha','ArithmeticAlgebraFecha','BruteForceFecha','CombinationFecha','DataStructuresFecha','DynamicProgrammingFecha','GameTheoryFecha','GeometryFecha','GraphTheoryFecha','GreedyFecha','NumberTheoryFecha','SortingSearchingFecha','StringsFecha');
 	}
+
+	function getArrayPorcentajesClasificacionProblemas($username){
+		$problemasUsuario = getArrayProblemasUser($username);
+		$usuarioClasificacion = array();
+
+		if (isset($problemasUsuario["noExiste"])) {
+			$usuarioClasificacion["noExiste"] = true;
+		}else{
+			extract(getArraysProblemasDB());
+
+			$usuarioClasificacion["AdHoc"] = 0;
+			$usuarioClasificacion["ArithmeticAlgebra"] = 0;
+			$usuarioClasificacion["BruteForce"] = 0;
+			$usuarioClasificacion["Combination"] = 0;
+			$usuarioClasificacion["DataStructures"] = 0;
+			$usuarioClasificacion["DynamicProgramming"] = 0;
+			$usuarioClasificacion["GameTheory"] = 0;
+			$usuarioClasificacion["Geometry"] = 0;
+			$usuarioClasificacion["GraphTheory"] = 0;
+			$usuarioClasificacion["Greedy"] = 0;
+			$usuarioClasificacion["NumberTheory"] = 0;
+			$usuarioClasificacion["SortingSearching"] = 0;
+			$usuarioClasificacion["Strings"] = 0;
+
+			foreach ($problemasUsuario as $valor) {
+				if (array_key_exists($valor, $AdHoc)) {$usuarioClasificacion["AdHoc"]++;}
+				if (array_key_exists($valor, $ArithmeticAlgebra)) {$usuarioClasificacion["ArithmeticAlgebra"]++;}
+				if (array_key_exists($valor, $BruteForce)) {$usuarioClasificacion["BruteForce"]++;}
+				if (array_key_exists($valor, $Combination)) {$usuarioClasificacion["Combination"]++;}
+				if (array_key_exists($valor, $DataStructures)) {$usuarioClasificacion["DataStructures"]++;}
+				if (array_key_exists($valor, $DynamicProgramming)) {$usuarioClasificacion["DynamicProgramming"]++;}
+				if (array_key_exists($valor, $GameTheory)) {$usuarioClasificacion["GameTheory"]++;}
+				if (array_key_exists($valor, $Geometry)) {$usuarioClasificacion["Geometry"]++;}
+				if (array_key_exists($valor, $GraphTheory)) {$usuarioClasificacion["GraphTheory"]++;}
+				if (array_key_exists($valor, $Greedy)) {$usuarioClasificacion["Greedy"]++;}
+				if (array_key_exists($valor, $NumberTheory)) {$usuarioClasificacion["NumberTheory"]++;}
+				if (array_key_exists($valor, $SortingSearching)) {$usuarioClasificacion["SortingSearching"]++;}
+				if (array_key_exists($valor, $Strings)) {$usuarioClasificacion["Strings"]++;}
+			}
+
+			$usuarioClasificacion["AdHoc"] = round(($usuarioClasificacion["AdHoc"]*100)/sizeof($AdHoc),2);
+			$usuarioClasificacion["ArithmeticAlgebra"] = round(($usuarioClasificacion["ArithmeticAlgebra"]*100)/sizeof($ArithmeticAlgebra),2);
+			$usuarioClasificacion["BruteForce"] = round(($usuarioClasificacion["BruteForce"]*100)/sizeof($BruteForce),2);
+			$usuarioClasificacion["Combination"] = round(($usuarioClasificacion["Combination"]*100)/sizeof($Combination),2);
+			$usuarioClasificacion["DataStructures"] = round(($usuarioClasificacion["DataStructures"]*100)/sizeof($DataStructures),2);
+			$usuarioClasificacion["DynamicProgramming"] = round(($usuarioClasificacion["DynamicProgramming"]*100)/sizeof($DynamicProgramming),2);
+			$usuarioClasificacion["GameTheory"] = round(($usuarioClasificacion["GameTheory"]*100)/sizeof($GameTheory),2);
+			$usuarioClasificacion["Geometry"] = round(($usuarioClasificacion["Geometry"]*100)/sizeof($Geometry),2);
+			$usuarioClasificacion["GraphTheory"] = round(($usuarioClasificacion["GraphTheory"]*100)/sizeof($GraphTheory),2);
+			$usuarioClasificacion["Greedy"] = round(($usuarioClasificacion["Greedy"]*100)/sizeof($Greedy),2);
+			$usuarioClasificacion["NumberTheory"] = round(($usuarioClasificacion["NumberTheory"]*100)/sizeof($NumberTheory),2);
+			$usuarioClasificacion["SortingSearching"] = round(($usuarioClasificacion["SortingSearching"]*100)/sizeof($SortingSearching),2);
+			$usuarioClasificacion["Strings"] = round(($usuarioClasificacion["Strings"]*100)/sizeof($Strings),2);
+		
+		}
+		return $usuarioClasificacion;
+	}
 	
 	function getArraysProblemasDB(){
 		include_once("php/conexion.php");
-
+		$conexion = conectarse();
 		$AdHoc 				= array();
 		$ArithmeticAlgebra 	= array();
 		$BruteForce 		= array();
