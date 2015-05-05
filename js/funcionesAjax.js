@@ -23,6 +23,7 @@ function obtenerTiempoCargaExtracionProblemas(evento){
 	    	var problemas = json.problemas;
 	    	var pagina = json.paginas;
 	    	var nombre = evento.data.nombre;
+	    	console.log(json);
 	    	$("#elemento").html(problemas);
 	    	$("#mensaje").html('Extrayendo de ' + nombre + ' por favor no cierre la página')
 	    	$.ajax({

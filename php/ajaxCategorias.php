@@ -4,18 +4,28 @@
 	if (isset($_POST["id"])) {
 		if (isset($_POST["calcular"])) {
 			$id = $_POST["id"];
-			$respuesta = array ('problemas'=>150);
-			
-			$html = file_get_html("http://coj.uci.cu/tables/problems.xhtml?classification=$id&page=10000");
-			$navbuttons = $html->find('a');
-			$posicion = count($navbuttons)-3;
-			$a = $html->find('a',$posicion)->plaintext;
+			$respuesta = array ('problemas'=>1);
+
+
+			if ($id == 6) {
+				//al tener 1 sola página el id 6 de Game Theory tiene error y se manda directamente a 1
+				$html = file_get_html("http://coj.uci.cu/tables/problems.xhtml?classification=$id&page=10000");
+				$navbuttons = $html->find('a');
+				$posicion = count($navbuttons)-1;
+				$a = $html->find('a',$posicion)->plaintext;
+				
+			}else{
+				$html = file_get_html("http://coj.uci.cu/tables/problems.xhtml?classification=$id&page=10000");
+				$navbuttons = $html->find('a');
+				$posicion = count($navbuttons)-3;
+				$a = $html->find('a',$posicion)->plaintext;
+			}
 
 			$html2 = file_get_html("http://coj.uci.cu/tables/problems.xhtml?classification=$id&page=$a");
 			$tr = $html2->find('table',1);
 			$aCount = $tr->getElementsByTagName('tr');
 			$aUltimo = count($aCount)-1;
-
+			
 			$totalProblemas = (($a-1)*50)+$aUltimo;
 			$respuesta["problemas"] = $totalProblemas;
 			$respuesta["paginas"] = $a;

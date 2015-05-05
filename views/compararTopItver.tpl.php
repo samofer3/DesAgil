@@ -15,7 +15,7 @@
 			<legend><?= $usuarioPropio['UsuarioCoj'];?> VS TOP <?= $limite ?></legend>
 			<table id="diferenciaProblemas">
 			  <tr>
-			    <td>Comparaciones de problemas resueltos con usuarios TOP:</td>
+			    <td>Comparaciones de problemas resueltos con usuarios TOP ITVER:</td>
 				<td>
 			    	<?= $usuarioPropio['UsuarioCoj'];?>
 			    	<div class="progressbar" data-perc="<?= $usuarioPropio['porcentajeRealizado']; ?>">

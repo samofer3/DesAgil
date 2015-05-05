@@ -21,6 +21,11 @@ div{
 	display: inline-block;
 }
 
+div#graficaPersonal{
+	margin-left: 1%;
+	width: 90%
+}
+
 div.linkProblemas{
 	margin-left: 25%;
 	width: 50%;
@@ -30,6 +35,7 @@ div.linkProblemas a{
 	margin: auto;
 	padding: 0.1px;
 }
+
 
 header, section, footer{
 	display: inline-block;
@@ -314,6 +320,32 @@ section.sectionLogin{
 
 table td{
 	padding: 0.1em 3em;
+}
+
+table#actualizarCategorias{
+	margin-bottom: 0.5em;
+	width: 95%;
+}
+
+table#actualizarCategorias td{
+	border-top: 1px solid black;
+	font-size: 0.8em;
+	padding: 0.3em;
+	text-align: center;
+}
+
+table#actualizarCategorias tr:first-child{
+	font-size: 1.2em;
+	color: white;
+}
+
+table#actualizarCategorias td:nth-child(odd){
+	border-right: 1px solid black;
+	width: 80%;
+}
+
+table#actualizarCategorias td:nth-child(even){
+	width: 20%;
 }
 
 table#datosUsuario{

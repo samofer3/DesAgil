@@ -159,6 +159,35 @@
 
 		return compact('solveForUser1','solveForBoth','solveForUser2','triedForUser1','triedForBoth','triedForUser2','porReaU1','porReaBo','porReaU2','porIntU1','porIntBo','porIntU2');
 	}
+
+	function getFechasProblemasDB(){
+		include_once("php/conexion.php");
+
+		$consulta = "SELECT * FROM categorias";
+		$ejecutar_consulta = $conexion->query($consulta);
+
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$fecha = $registro["fechaActualizacion"];
+			$idCategoria = $registro["idCategorias"];
+			if ($idCategoria == 25) { $AdHocFecha = $fecha;}
+			if ($idCategoria == 1) { $ArithmeticAlgebraFecha = $fecha;}
+			if ($idCategoria == 2) { $BruteForceFecha = $fecha;}
+			if ($idCategoria == 3) { $CombinationFecha = $fecha;}
+			if ($idCategoria == 4) { $DataStructuresFecha = $fecha;}
+			if ($idCategoria == 5) { $DynamicProgrammingFecha = $fecha;}
+			if ($idCategoria == 6) { $GameTheoryFecha = $fecha;}
+			if ($idCategoria == 7) { $GeometryFecha = $fecha;}
+			if ($idCategoria == 23) { $GraphTheoryFecha = $fecha;}
+			if ($idCategoria == 8) { $GreedyFecha = $fecha;}
+			if ($idCategoria == 9) { $NumberTheoryFecha = $fecha;}
+			if ($idCategoria == 10) { $SortingSearchingFecha = $fecha;}
+			if ($idCategoria == 24) { $StringsFecha = $fecha;}
+		}
+
+		$conexion->close();
+
+		return compact('AdHocFecha','ArithmeticAlgebraFecha','BruteForceFecha','CombinationFecha','DataStructuresFecha','DynamicProgrammingFecha','GameTheoryFecha','GeometryFecha','GraphTheoryFecha','GreedyFecha','NumberTheoryFecha','SortingSearchingFecha','StringsFecha');
+	}
 	
 	function getArraysProblemasDB(){
 		include_once("php/conexion.php");
@@ -308,6 +337,21 @@
 		}
 
 		$conexion->close();
-
+		/*
+		//Variables disponibles
+		$AdHoc
+		$ArithmeticAlgebra
+		$BruteForce
+		$Combination
+		$DataStructures
+		$DynamicProgramming
+		$GameTheory
+		$Geometry
+		$GraphTheory
+		$Greedy
+		$NumberTheory
+		$SortingSearching
+		$Strings
+		*/
 		return compact('AdHoc','ArithmeticAlgebra','BruteForce','Combination','DataStructures','DynamicProgramming','GameTheory','Geometry','GraphTheory','Greedy','NumberTheory','SortingSearching','Strings');
 	}
