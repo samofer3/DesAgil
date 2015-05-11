@@ -70,6 +70,39 @@
 		return $arreglo;
 	}
 
+	function getArrayDatesUser($user){
+		$retorno = array();
+		$html = file_get_html("http://coj.uci.cu/tables/status.xhtml?username=$user&status=ac&planguage=All&page=10000");
+		if ($html) {
+			$navbuttons = $html->find('a');
+			$posicion = count($navbuttons)-3;
+			$paginas = $html->find('a',$posicion)->plaintext;
+
+			if ($paginas>=10) {$paginas=10;}
+			
+			for ($i=1; $i <= $paginas; $i++) { 
+				$html = file_get_html("http://coj.uci.cu/tables/status.xhtml?username=$user&status=ac&planguage=All&page=$i");
+				$table = $html->getElementById('#submission');
+				
+				$trs = $table->find('tr');
+				array_shift($trs);
+				foreach ($trs as $valor) {
+					$idProblema = trim($valor->children(3)->plaintext);
+					$fecha = trim($valor->children(1)->plaintext);
+					$dirseccionada = explode(" ",$fecha);
+					$fecha = $dirseccionada[0];
+					$exploded = multiexplode(array(",",".","/","-"),$fecha);
+		    		$ano = $exploded[0];
+		    		$mes = $exploded[1];
+		    		$retorno[] = $ano."-".$mes;
+				}
+			}
+		}else{
+			$retorno["noExiste"] = true;
+		}
+		return $retorno;
+	}
+
 
 	function getNombres30Itver(){
 		$html = file_get_html("http://coj.uci.cu/tables/usersinstitutionrank.xhtml?inst_id=8175");
@@ -249,6 +282,40 @@
 		}
 		return $usuarioClasificacion;
 	}
+
+    function getArrayLastSixMonths(){
+    	$fechas = array();
+    	$ano = date("Y");
+    	$mes = date("m")+1-1;
+
+    	for ($i=0; $i < 6; $i++) {
+    		$fechas[$i] = $ano."-".str_pad($mes, 2, '0', STR_PAD_LEFT);
+    		if ($mes <= 1) {
+    			$ano--;
+    			$mes=12;
+    		}else{
+    			$mes--;
+    		}
+    	}
+    	return $fechas;
+    }
+
+    function getArrayNamesLastSixMonths(){
+    	$fechas = array();
+    	$ano = date("Y");
+    	$mes = date("m")+1-1;
+    	$meses = array("Enero","Febrero","Marzo","Abril","Mayo","Junio","Julio","Agosto","Septiembre","Octubre","Noviembre","Diciembre");
+    	for ($i=0; $i < 6; $i++) {
+    		$fechas[$i] = $meses[$mes-1]." - ".$ano;
+    		if ($mes <= 1) {
+    			$ano--;
+    			$mes=12;
+    		}else{
+    			$mes--;
+    		}
+    	}
+    	return $fechas;
+    }
 	
 	function getArraysProblemasDB(){
 		include_once("php/conexion.php");
@@ -416,3 +483,9 @@
 		*/
 		return compact('AdHoc','ArithmeticAlgebra','BruteForce','Combination','DataStructures','DynamicProgramming','GameTheory','Geometry','GraphTheory','Greedy','NumberTheory','SortingSearching','Strings');
 	}
+
+	function multiexplode ($delimiters,$string) {
+        $ready = str_replace($delimiters, $delimiters[0], $string);
+        $launch = explode($delimiters[0], $ready);
+        return  $launch;
+    }

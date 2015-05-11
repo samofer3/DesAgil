@@ -7,6 +7,7 @@
 						<ul>
 							<li><a href="totalResueltos">Problemas resueltos - Total</a></li>
 							<li><a href="totalCategorias">Problemas resueltos - Categorias</a></li>
+							<li><a href="avanceMeses">Avance últimos 6 meses</a></li>
 						</ul>
 					</div>
 				</li>
