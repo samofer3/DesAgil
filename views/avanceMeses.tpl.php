@@ -16,8 +16,8 @@
 				<legend class="legendContrasena">Selección de usuario</legend>
 					<table id="comparacion">
 					  <tr>
-					    <td><span>Buscar por nombre específico:</span></td>
-					    <td><input class="" id="usuarioAComparar" type="text" name="usuario_txt"/></td>
+					    <td><span>Selecciona uno de los 30 mejores del ITVER:</span></td>
+					    <td><select class="" id="usuarioACompararSelect1" name="usuario_txt" ><?= $opcionesItver ?></select></td>
 					  </tr>
 					</table>
 					<p>

@@ -170,6 +170,17 @@
 		return $opciones;
 	}
 
+	function converterArrayAsociativoToSelect($array, $UsuarioCoj){
+		$opciones = "<option value=''>---</option>";
+
+		foreach ($array as $email => $UsuarioCojBD) {
+			if ($UsuarioCojBD != $UsuarioCoj) {
+				$opciones .=  "<option value='$email'>$UsuarioCojBD</option>";
+			}
+		}
+		return $opciones;
+	}
+
 	function getComparacion($usuario1, $usuario2){
 		$html = file_get_html("http://coj.uci.cu/user/compareusers.xhtml?uid1=$usuario1&uid2=$usuario2&submit=Compare");
 		$variables[0] = $html->find('.panel-heading', 3)->children(1)->plaintext;
@@ -315,6 +326,21 @@
     		}
     	}
     	return $fechas;
+    }
+    function getArrayUsuariosRegistrados(){
+    	include_once("php/conexion.php");
+    	$conexion = conectarse();
+
+    	$consulta = "SELECT * FROM login";
+		$ejecutar_consulta = $conexion->query($consulta);
+		$arrayUsuarios = array();
+		while ($registro = $ejecutar_consulta->fetch_assoc()) {
+			$email 	 = $registro["email"];
+			$userCoj = $registro["userCOJ"];
+			$arrayUsuarios[$email] = $userCoj; 
+		}
+		
+		return $arrayUsuarios;
     }
 	
 	function getArraysProblemasDB(){

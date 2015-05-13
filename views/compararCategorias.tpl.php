@@ -16,20 +16,20 @@
 				<legend class="legendContrasena">Comparar problemas de usuarios por categorías</legend>
 					<table id="comparacion">
 					  <tr>
-					    <td><span>Selecciona uno de los 30 mejores del ITVER:</span></td>
-					    <td><select class="" id="usuarioACompararSelect1" name="usuarioACompararItver_slc" ><?= $opcionesItver ?></select></td>
-					  </tr>
-					  <tr>
 					    <td><span>Selecciona uno de los 30 mejores global:</span></td>
 					    <td><select class="" id="usuarioACompararSelect2" name="usuarioACompararGlobal_slc" ><?= $opcionesGlobal ?></select></td>
 					  </tr>
 					  <tr>
-					    <td><span>Buscar por nombre específico:</span></td>
-					    <td><input class="" id="usuarioAComparar" type="text" name="usuarioAComparar1_txt"/></td>
+					    <td><span>Selecciona uno de los 30 mejores del ITVER:</span></td>
+					    <td><select class="" id="usuarioACompararSelect1" name="usuarioACompararItver_slc" ><?= $opcionesItver ?></select></td>
 					  </tr>
 					  <tr>
-					    <td><span>Buscar por nombre específico:</span></td>
-					    <td><input class="" id="usuarioAComparar" type="text" name="usuarioAComparar2_txt"/></td>
+					    <td><span>Selecciona uno de los 30 mejores del ITVER:</span></td>
+					    <td><select class="" id="usuarioACompararSelect1" name="usuarioAComparar1_txt" ><?= $opcionesItver ?></select></td>
+					  </tr>
+					  <tr>
+					    <td><span>Selecciona uno de los 30 mejores del ITVER:</span></td>
+					    <td><select class="" id="usuarioACompararSelect1" name="usuarioAComparar2_txt" ><?= $opcionesItver ?></select></td>
 					  </tr>
 					</table>
 					<p><input id="comparar_btn" class="fade marginTop1Em" type="submit"/></p>

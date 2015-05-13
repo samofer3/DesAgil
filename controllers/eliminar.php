@@ -1,10 +1,25 @@
 <?php
 	include_once("php/sesion.php");
 
-	$mensaje = $_SESSION["usuarioCoj"];
-	
+	$usuarioCoj = $_SESSION["usuarioCoj"];
+	$mensaje = "Usuario COJ: " . $_SESSION["usuarioCoj"];
+	$classFieldset = "displayNone";
+	$opcionesEliminar = "";
+
 	if (isset($_GET["noEliminado"])) {
-		$mensaje = "No se pudo eliminar tu usuario, intenta de nuevo";
+		$mensaje = "No se pudo eliminar el usuario, intenta de nuevo";
 	}
 
-	view("eliminar",compact("mensaje"));
+	if (isset($_GET["eliminado"])) {
+		$user = $_GET["user"];
+		$mensaje = "Se ha eliminado $user del sistema";
+	}
+
+	if ($usuarioCoj == "llanero") {
+		$arrayUsuarios = getArrayUsuariosRegistrados();
+		$opcionesEliminar = converterArrayAsociativoToSelect($arrayUsuarios,$usuarioCoj);
+		$classFieldset = "displayBlock";
+	}
+	
+
+	view("eliminar",compact('mensaje','opcionesEliminar','classFieldset'));

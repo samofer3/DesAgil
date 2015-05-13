@@ -6,7 +6,7 @@
 
 	// configuraciones de grafica
 	$graph = new Graph(1250,320,'auto');
-	$graph->SetScale("textlin",0,100);
+	$graph->SetScale("textlin");
 	$graph->ygrid->Show(true,true);
 	$graph->xgrid->Show(true,false);
 
@@ -42,6 +42,10 @@
 	// Create the first line
 	$p1 = new LinePlot($datay1);
 	$graph->Add($p1);
+	$p1->value->Show();
+	$p1->value->SetFont(FF_ARIAL,FS_BOLD,8);
+	$p1->value->SetAngle(45);
+	$p1->value->SetColor("#6495ED","darkred"); 
 	$p1->SetColor("#6495ED");
 	$p1->SetLegend($usuarioCoj);
 
@@ -65,6 +69,10 @@
 		// Create the first line
 		$p2 = new LinePlot($datay2);
 		$graph->Add($p2);
+		$p2->value->Show();
+		$p2->value->SetFont(FF_ARIAL,FS_BOLD,8);
+		$p2->value->SetAngle(45);
+		$p2->value->SetColor("#649500","darkred");
 		$p2->SetColor("#649500");
 		$p2->SetLegend($usuarioCoj);
 	}
@@ -89,6 +97,10 @@
 		// Create the first line
 		$p3 = new LinePlot($datay3);
 		$graph->Add($p3);
+		$p3->value->Show();
+		$p3->value->SetFont(FF_ARIAL,FS_BOLD,8);
+		$p3->value->SetAngle(45);
+		$p3->value->SetColor("#640000","darkred");
 		$p3->SetColor("#640000");
 		$p3->SetLegend($usuarioCoj);
 	}
@@ -113,6 +125,10 @@
 		// Create the first line
 		$p4 = new LinePlot($datay4);
 		$graph->Add($p4);
+		$p4->value->Show();
+		$p4->value->SetFont(FF_ARIAL,FS_BOLD,8);
+		$p4->value->SetAngle(45);
+		$p4->value->SetColor("#6400EE","darkred");
 		$p4->SetColor("#6400EE");
 		$p4->SetLegend($usuarioCoj);
 	}
@@ -137,6 +153,10 @@
 		// Create the first line
 		$p5 = new LinePlot($datay5);
 		$graph->Add($p5);
+		$p5->value->Show();
+		$p5->value->SetFont(FF_ARIAL,FS_BOLD,8);
+		$p5->value->SetAngle(45);
+		$p5->value->SetColor("#EE00EE","darkred");
 		$p5->SetColor("#EE00EE");
 		$p5->SetLegend($usuarioCoj);
 	}

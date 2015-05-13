@@ -22,7 +22,7 @@
 
 	// configuraciones de grafica
 	$graph = new Graph(1250,320,'auto');
-	$graph->SetScale("textlin",0,100);
+	$graph->SetScale("textlin");
 	$graph->ygrid->Show(true,true);
 	$graph->xgrid->Show(true,false);
 
@@ -42,7 +42,11 @@
 	// Create the first line
 	$p1 = new LinePlot($datay1);
 	$graph->Add($p1);
-	$p1->SetColor("#6495ED");
+	$p1->value->Show();
+	$p1->value->SetFont(FF_ARIAL,FS_BOLD,8);
+	$p1->value->SetAngle(45);
+	$p1->value->SetColor("#649500","darkred");
+	$p1->SetColor("#649500");
 	$p1->SetLegend($usuarioCoj);
 
 	// Output line

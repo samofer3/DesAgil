@@ -2,6 +2,8 @@
 	include_once("php/sesion.php");
 	$classFieldset = "displayBlock";
 	$usuarioPropio = $_SESSION["usuarioCoj"];
+	$nombresItver = $_SESSION["itver30"];
+	$opcionesItver = converterArrayToSelect($nombresItver, $usuarioPropio);
 
 
 	if (isset($_POST["usuario_txt"])) {
@@ -15,7 +17,7 @@
 	}
 	
 	$link = "";
-	$mensaje = "Si quiere calcular el propio omita el campo de texto";
+	$mensaje = "Si quiere calcular el propio omita la selección";
 	$fechasUser = getArrayDatesUser($usuario);
 
 	if (isset($fechasUser["noExiste"])) {
@@ -47,5 +49,5 @@
 			$link.= "&fecha$i=$conteoFechas[$i]";
 		}
 
-		view("avanceMeses", compact('classFieldset','mensaje','link'));
+		view("avanceMeses", compact('classFieldset','mensaje','link','opcionesItver'));
 	}

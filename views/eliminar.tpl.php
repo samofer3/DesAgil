@@ -13,9 +13,17 @@
 		<fieldset class="fieldsetEliminar">
 			<legend>Dar de baja</legend>
 			<p class="justify">¿Estás seguro que deseas eliminar tu cuenta del sistema? Si realizas esta acción, ya no podrás iniciar sesión con tus datos y tendrías que registrarte de nuevo.</p>
-			<p><a id="btnEliminar" class="btnEliminar" href="darDeBaja">Eliminar</a></p>
-			<p>Usuario COJ: <strong><?= $mensaje ?></strong></p>
+			<p><a id="btnEliminar" class="btnEliminar" href="darDeBaja?propio">Eliminar</a></p>
 		</fieldset>
+		<form action="darDeBaja" method="get" class="<?= $classFieldset ?>">
+			<fieldset class="fieldsetEliminar">
+				<legend>Dar de baja algún usuario del sistema</legend>
+				<p class="justify">Aquí podrás seleccionar un usuario ya registrado y eliminarlo del sistema, ten en cuenta que deberá volver a registrarse para poder volver acceder al sistema.</p>
+				<select class="" id="usuarioACompararSelect1" name="usuario_select" required><?= $opcionesEliminar ?></select></br>
+				<input id="comparar_btn" class="fade marginTop1Em" type="submit"/>
+			</fieldset>
+		</form>
+		<p><strong><?= $mensaje ?></strong></p>
 	</section>
 	<?php include("views/footer.tpl.php"); ?>
 	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
