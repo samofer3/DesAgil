@@ -35,10 +35,11 @@
 					<p><input id="comparar_btn" class="fade marginTop1Em" type="submit"/></p>
 			</fieldset>
 		</form>
-		<div id="graficaPersonal" class="<?= $classFieldset ?>">
+		<div id="graficaPersonal" class="<?= $classFieldset ?> center">
 			<fieldset class="datosUsuario">
 				<legend>Comparativa</legend>
-				<?= "<img src='graficarClasificacionProblemasVarios$link' />";?> 
+				<?= "<img src='graficarClasificacionProblemasVarios$link' />";?></br>
+				<?= "<a href='generadorExcel$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?>
 			</fieldset>
 		</div>
 	</section>

@@ -21,9 +21,9 @@
 
 		$usuarioPropioProblemas = getArrayProblemasUser($usuarioPropio);
 		if (array_key_exists($idProblema, $usuarioPropioProblemas)) {
-			$mensajePropio = "Ya lo resolviste";
+			$mensajePropio = "Resuelto";
 		}else{
-			$mensajePropio = "Aun no lo resuelves";
+			$mensajePropio = "No Resuelto";
 		}	
 
 		if ($usuarioItver != "") {
@@ -32,9 +32,9 @@
 				$mensajeItver = "Usuario no existe en COJ";
 			}else{
 				if (array_key_exists($idProblema, $usuarioItverProblemas)) {
-			    	$mensajeItver = "Ya lo resolvió";
+			    	$mensajeItver = "Resuelto";
 				}else{
-					$mensajeItver = "Aun no lo resuelve";
+					$mensajeItver = "No Resuelto";
 				}	
 			}
 		}else{ $mensajeItver = "";}
@@ -45,9 +45,9 @@
 				$mensajeGlobal = "Usuario no existe en COJ";
 			}else{
 				if (array_key_exists($idProblema, $usuarioGlobalProblemas)) {
-			    	$mensajeGlobal = "Ya lo resolvió";
+			    	$mensajeGlobal = "Resuelto";
 				}else{
-					$mensajeGlobal = "Aun no lo resuelve";
+					$mensajeGlobal = "No Resuelto";
 				}
 			}
 		}else{$mensajeGlobal = "";}
@@ -58,9 +58,9 @@
 				$mensaje1 = "Usuario no existe en COJ";
 			}else{
 				if (array_key_exists($idProblema, $usuario1Problemas)) {
-			    	$mensaje1 = "Ya lo resolvió";
+			    	$mensaje1 = "Resuelto";
 				}else{
-					$mensaje1 = "Aun no lo resuelve";
+					$mensaje1 = "No Resuelto";
 				}	
 			}
 		}else{$mensaje1 = "";}
@@ -71,9 +71,9 @@
 				$mensaje2 = "Usuario no existe en COJ";
 			}else{
 				if (array_key_exists($idProblema, $usuario2Problemas)) {
-			    	$mensaje2 = "Ya lo resolvió";
+			    	$mensaje2 = "Resuelto";
 				}else{
-					$mensaje2 = "Aun no lo resuelve";
+					$mensaje2 = "No Resuelto";
 				}
 			}
 		}else{$mensaje2 = "";}
@@ -84,9 +84,9 @@
 				$mensaje3 = "Usuario no existe en COJ";
 			}else{
 				if (array_key_exists($idProblema, $usuario3Problemas)) {
-			    	$mensaje3 = "Ya lo resolvió";
+			    	$mensaje3 = "Resuelto";
 				}else{
-					$mensaje3 = "Aun no lo resuelve";
+					$mensaje3 = "No Resuelto";
 				}
 			}
 		}else{$mensaje3 = "";}
@@ -97,9 +97,9 @@
 			}else{
 				$usuario4Problemas = getArrayProblemasUser($usuario4);
 				if (array_key_exists($idProblema, $usuario4Problemas)) {
-			    	$mensaje4 = "Ya lo resolvió";
+			    	$mensaje4 = "Resuelto";
 				}else{
-					$mensaje4 = "Aun no lo resuelve";
+					$mensaje4 = "No Resuelto";
 				}
 			}
 		}else{$mensaje4 = "";}
