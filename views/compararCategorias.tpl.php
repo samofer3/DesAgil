@@ -39,7 +39,7 @@
 			<fieldset class="datosUsuario">
 				<legend>Comparativa</legend>
 				<?= "<img src='graficarClasificacionProblemasVarios$link' />";?></br>
-				<?= "<a href='generadorExcel$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?>
+				<?= "<a href='generadorExcelCategorias$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?>
 			</fieldset>
 		</div>
 	</section>

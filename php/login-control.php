@@ -91,6 +91,8 @@
 			$_SESSION["itver30"] 							= $resultado;
 			extract(getNombres30Global());
 			$_SESSION["global30"] 							= $resultado;
+			extract(getNombres30Mexico());
+			$_SESSION["mexico30"] 							= $resultado;
 			header("Location: ../home");
 		}else{
 			header("Location: ../index?usuarioNoExistente");

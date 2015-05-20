@@ -15,7 +15,7 @@ include 'PHPExcel.php';
 include 'PHPExcel/Writer/Excel2007.php';
 include 'PHPExcel/IOFactory.php';
 
-if (!file_exists("excel/Base.xlsx")) {
+if (!file_exists("excel/BaseCategorias.xlsx")) {
 	echo "error";
 }else{
 	$usuarioCoj = $_GET["upName"];
@@ -34,7 +34,7 @@ if (!file_exists("excel/Base.xlsx")) {
 	$porcentajeStrings = $_GET["upStr"];
 	
 	// Create new PHPExcel object
-	$objPHPExcel = PHPExcel_IOFactory::load("excel/Base.xlsx");
+	$objPHPExcel = PHPExcel_IOFactory::load("excel/BaseCategorias.xlsx");
 	// Set properties
 	$objPHPExcel->getProperties()->setCreator("COJ-Data Extractor");
 	$objPHPExcel->getProperties()->setLastModifiedBy($usuarioCoj);

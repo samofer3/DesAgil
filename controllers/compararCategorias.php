@@ -4,8 +4,10 @@
 	$usuarioPropio = $_SESSION["usuarioCoj"];
 	$nombresItver = $_SESSION["itver30"];
 	$nombresGlobal = $_SESSION["global30"];
+	$nombresMexico = $_SESSION["mexico30"];
 	$opcionesItver = converterArrayToSelect($nombresItver, $usuarioPropio);
 	$opcionesGlobal = converterArrayToSelect($nombresGlobal, $usuarioPropio);
+	$opcionesGlobal.= converterArrayToSelect($nombresMexico, $usuarioPropio, "<option value=''>---- MÉXICO ----</option>");
 
 	
 

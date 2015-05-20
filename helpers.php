@@ -121,6 +121,23 @@
 		return compact('resultado');
 	}
 
+	function getNombres30Mexico(){
+		$html = file_get_html("http://coj.uci.cu/tables/userscountryrank.xhtml?country_id=133");
+		$table 		= $html->find('table',1);
+		$aTotal 	= $table->find('a[title]');
+		$resultado	= array();
+		$contador 	= 0;
+		foreach ($aTotal as $a) {
+			$nombre = $a->innertext;
+			$opcion = preg_replace("/[^a-zA-Z0-9_]+/", "", $nombre);
+			if (strcmp($opcion, "iclassfafaplugi")) {
+				$resultado[$contador] = $opcion;
+				$contador++;
+			}
+		}
+		return compact('resultado');
+	}
+
 	function getNombres30Global(){
 		$html = file_get_html("http://coj.uci.cu/tables/usersrank.xhtml");
 		$table 		= $html->find('table',1);
@@ -160,8 +177,7 @@
 		return $porcentajeRealizado;
 	}
 
-	function converterArrayToSelect($array, $UsuarioCoj){
-		$opciones = "<option value=''>---</option>";
+	function converterArrayToSelect($array, $UsuarioCoj, $opciones = "<option value=''>---</option>"){
 		for ($i=0; $i < count($array); $i++) { 
 			if ($array[$i] != $UsuarioCoj) {
 				$opciones .=  "<option value='$array[$i]'>$array[$i]</option>";

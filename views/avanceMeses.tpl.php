@@ -26,10 +26,11 @@
 					</p>
 			</fieldset>
 		</form>
-		<div id="graficaPersonal" class="<?= $classFieldset ?>">
+		<div id="graficaPersonal" class="<?= $classFieldset ?> center">
 			<fieldset class="datosUsuario">
 				<legend>Avance de número de problemas por mes</legend>
-				<?= "<img src='graficarFechasProblemasPersonal$link' />";?> 
+				<?= "<img src='graficarFechasProblemasPersonal$link' />";?>
+				<?= "<a href='generadorExcelMeses$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?> 
 			</fieldset>
 		</div>
 	</section>
