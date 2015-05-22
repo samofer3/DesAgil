@@ -1,3 +1,5 @@
 	<footer>
-		<p>Powered by |</p><p>DesAgil</p><p>Team</p>
+		<figure>
+			<img src="img/footer.jpg" alt="Logo ITVER" />
+		</figure>
 	</footer>

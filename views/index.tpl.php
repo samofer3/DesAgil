@@ -9,7 +9,13 @@
 </head>
 <body>
 	<header class="index">
-		<p>Herramientas</p><p>Agiles de </p><p>Desarrollo</p>
+		<figure>
+			<img src="img/cepc.png" alt="Logo CEPC">
+		</figure>
+		<p>Comunidad</p><p>Estudiantil De </p><p>Programación</p><p>Competitiva ITver</p>
+		<figure>
+			<img src="img/itver.png" alt="Logo ITVER">
+		</figure>
 	</header>
 	<section class="center sectionLogin">
 		<form id="registrar" name="formularioRegistrar" action="php/login-control.php" class="formulario" method="post" enctype="application/x-www-form-urlencoded">

@@ -4,8 +4,9 @@ html,body {
 }
 
 a{
-	color: #EFDB0F;
+	color: #2BDF0E;
 	text-decoration: none;
+	text-shadow: 3px 1px 6px rgba(0, 0, 0, 0.1);
 }
 
 a:hover{
@@ -45,16 +46,29 @@ header, section, footer{
 }
 
 header{
-	background: #131313;
+	background: #F1F1F1;
 }
 
 header.index{
-	background: #131313;
-	color: white;
+	background: #F1F1F1;
+	color: black;
 	font-size: 2em;
 	margin-top: 0;
 	margin-bottom: 0;
 	text-align: center;
+}
+
+header figure, header p {
+	display: inline-block;
+}
+
+header figure{
+	margin: 0.3em 0.1em;
+}
+
+header img{
+	border-radius: 3px;
+	height: 55px;
 }
 
 header p{
@@ -64,15 +78,30 @@ header p{
 }
 
 header p::first-letter{
-	color: #FFE800;
 	font-size: 1.3em;
 	text-decoration: overline;
-
 	text-shadow: 2px 3px 4px rgba(255, 255, 255, 0.5);
 }
 
+
+header p:nth-child(2)::first-letter{
+	color: #40B1E0;
+}
+
+header p:nth-child(3)::first-letter{
+	color: #FAE802;
+}
+
+header p:nth-child(4)::first-letter{
+	color: #B9071A;
+}
+
+header p:nth-child(5)::first-letter{
+	color: #47CD05;
+}
+
 fieldset{
-	background : #8A8B82;
+	background : #8D9891;
 	border-radius: 9px;
 	margin: 0.8em 0.2em;
 	padding: 1.3em;
@@ -113,7 +142,7 @@ fieldset.fieldsetEliminar p a{
 }
 
 fieldset.fieldsetIndex{
-	background: #58A8A8;
+	background: #6EA5A5;
 	border-radius: 9px;
 	height: 100%;
 	margin: auto;
@@ -157,28 +186,20 @@ figure#logoCOJ{
 }
 
 footer{
-	background: #131313;
-	color: white;
-	font-size: 2em;
-    height: 11%;
+	background: #F1F1F1;
+    height: 13%;
     left: 0;
     margin-bottom: 0;
     text-align: center;
 	width: 100%;
 }
 
-footer p{
-	display: inline-block;
-	margin: 0.3em 0;
-	margin-right: 0.2em;
+footer figure{
+	margin-top: 0.2em;
 }
 
-footer p::first-letter{
-	color: red;
-	font-size: 1.3em;
-	text-decoration: underline;
-
-	text-shadow: 2px 3px 4px rgba(88, 168, 168, 0.5);
+footer figure img{
+	height: 80px;
 }
 
 img{
@@ -186,8 +207,8 @@ img{
 }
 
 legend{
-	color: #FFFFFF;
-	background: #000000;
+	color: #000000;
+	background: #FFFFFF;
 	border-radius: 4px;
 	font-size: 1.2em;
 	margin: auto;
@@ -195,8 +216,8 @@ legend{
 }
 
 nav {
-	background-color: #000000;
-	border: 1px solid #dedede;
+	background-color: #E0E0E0;
+	border: 1px solid #000000;
 	border-radius: 4px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
 	color: #888;
@@ -223,7 +244,7 @@ nav ul li {
 }
 	
 nav > ul > li > a {
-	color: #aaa;
+	color: #777;
 	display: block;
 	line-height: 56px;
 	padding: 0 24px;
@@ -235,7 +256,7 @@ nav > ul > li > a:hover{
 }
 
 nav > ul > li > a > .caret {
-	border-top: 4px solid #aaa;
+	border-top: 4px solid #000;
 	border-right: 4px solid transparent;
 	border-left: 4px solid transparent;
 	content: "";
@@ -255,7 +276,7 @@ nav > ul > li:hover {
 }
 
 nav > ul > li:hover > a {
-    color: rgb( 255, 255, 255 );
+    color: rgb( 0, 175, 0 );
 }
 
 nav > ul > li:hover > a > .caret {
@@ -307,11 +328,11 @@ nav > ul > li:hover > div {
 }
 
 section{
-	margin-left: 0.5%;
-	background: #A5A798;
+	margin-left: 0.1%;
+	background: #BBB;
 	height: auto;
 	padding-bottom: 5px; /* El tamaño del footer para evitar el sobreposicionamiento */
-	width: 99%;
+	width: 99.5%;
 }
 
 section.sectionLogin{
