@@ -4,7 +4,7 @@ html,body {
 }
 
 a{
-	color: #2BDF0E;
+	color: #EC7D00;
 	text-decoration: none;
 	text-shadow: 3px 1px 6px rgba(0, 0, 0, 0.1);
 }
@@ -46,12 +46,12 @@ header, section, footer{
 }
 
 header{
-	background: #F1F1F1;
+	background: #1A2366;
 }
 
 header.index{
-	background: #F1F1F1;
-	color: black;
+	background: #1A2366;
+	color: #FFFFFF;
 	font-size: 2em;
 	margin-top: 0;
 	margin-bottom: 0;
@@ -101,7 +101,7 @@ header p:nth-child(5)::first-letter{
 }
 
 fieldset{
-	background : #8D9891;
+	background : #FCFCFC;
 	border-radius: 9px;
 	margin: 0.8em 0.2em;
 	padding: 1.3em;
@@ -142,7 +142,7 @@ fieldset.fieldsetEliminar p a{
 }
 
 fieldset.fieldsetIndex{
-	background: #6EA5A5;
+	background: #EDEDED;
 	border-radius: 9px;
 	height: 100%;
 	margin: auto;
@@ -165,7 +165,7 @@ fieldset#home{
 }
 
 fieldset input.button{
-	background: black;
+	background: rgb(58, 65, 139);
 	border-radius: 8px;
 	color: white;
 	padding: 0.2em 1em;
@@ -208,7 +208,7 @@ img{
 
 legend{
 	color: #000000;
-	background: #FFFFFF;
+	background: #FCFCFC;
 	border-radius: 4px;
 	font-size: 1.2em;
 	margin: auto;
@@ -216,11 +216,11 @@ legend{
 }
 
 nav {
-	background-color: #E0E0E0;
-	border: 1px solid #000000;
+	background-color: #1A2366;
+	border: 0px solid #000000;
 	border-radius: 4px;
 	box-shadow: 0 2px 2px -1px rgba(0, 0, 0, 0.055);
-	color: #888;
+	color: #FFF;
 	display: block;
 	margin: 8px 22px 8px 22px;
 	overflow: hidden;
@@ -244,7 +244,7 @@ nav ul li {
 }
 	
 nav > ul > li > a {
-	color: #777;
+	color: #FFF;
 	display: block;
 	line-height: 56px;
 	padding: 0 24px;
@@ -329,7 +329,7 @@ nav > ul > li:hover > div {
 
 section{
 	margin-left: 0.1%;
-	background: #BBB;
+	background: #FFF;
 	height: auto;
 	padding-bottom: 5px; /* El tamaño del footer para evitar el sobreposicionamiento */
 	width: 99.5%;
@@ -357,7 +357,7 @@ table#actualizarCategorias td{
 
 table#actualizarCategorias tr:first-child{
 	font-size: 1.2em;
-	color: white;
+	color: rgb(24, 77, 194);
 }
 
 table#actualizarCategorias td:nth-child(odd){
