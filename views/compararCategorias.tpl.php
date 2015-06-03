@@ -39,7 +39,37 @@
 			<fieldset class="datosUsuario">
 				<legend>Comparativa</legend>
 				<?= "<img src='graficarClasificacionProblemasVarios$link' />";?></br>
-				<?= "<a href='generadorExcelCategorias$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?>
+				<table id="comparadorProblemas">
+					  <tr>
+					    <td>Ad-Hoc</td>
+					    <td><?= $AdHoc ?></td>
+					    <td>Arithmetic-Algebra</td>
+					    <td><?= $ArithmeticAlgebra ?></td>
+					    <td>Brute Force</td>
+					    <td><?= $BruteForce ?></td>
+					    <td>Combination</td>
+					    <td><?= $Combination ?></td>
+					    <td>Data Structures</td>
+					    <td><?= $DataStructures ?></td>
+					    <td>Dynamic Program</td>
+					    <td><?= $DynamicProgramming ?></td>
+					    <td>Game Theory</td>
+					    <td><?= $GameTheory ?></td>
+					    <td>Geometry</td>
+					    <td><?= $Geometry ?></td>
+					    <td>Graph Theory</td>
+					    <td><?= $GraphTheory ?></td>
+					    <td>Greedy</td>
+					    <td><?= $Greedy ?></td>
+					    <td>Number Theory</td>
+					    <td><?= $NumberTheory ?></td>
+					    <td>Sor-Searching</td>
+					    <td><?= $SortingSearching ?></td>
+					    <td>Strings</td>
+					    <td><?= $Strings ?></td>
+					  </tr>
+					</table>
+					<?= "<a href='generadorExcelCategorias$link' class='activeLoginALink'>Generar archivo Excel</a>"; ?>
 			</fieldset>
 		</div>
 	</section>

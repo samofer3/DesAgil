@@ -131,7 +131,24 @@
 			}
 		}
 
-		view("compararCategorias", compact('opcionesItver','opcionesGlobal','classFieldset','link'));
+		extract(getArraysProblemasDB());
+	
+		$AdHoc = sizeof($AdHoc);
+		$ArithmeticAlgebra = sizeof($ArithmeticAlgebra);
+		$BruteForce = sizeof($BruteForce);
+		$Combination = sizeof($Combination);
+		$DataStructures = sizeof($DataStructures);
+		$DynamicProgramming = sizeof($DynamicProgramming);
+		$GameTheory = sizeof($GameTheory);
+		$Geometry = sizeof($Geometry);
+		$GraphTheory = sizeof($GraphTheory);
+		$Greedy = sizeof($Greedy);
+		$NumberTheory = sizeof($NumberTheory);
+		$SortingSearching = sizeof($SortingSearching);
+		$Strings = sizeof($Strings);
+
+
+		view("compararCategorias", compact('opcionesItver','opcionesGlobal','classFieldset','link','AdHoc','ArithmeticAlgebra','BruteForce','Combination','DataStructures','DynamicProgramming','GameTheory','Geometry','GraphTheory','Greedy','NumberTheory','SortingSearching','Strings'));
 	}else{
 		view("compararCategorias", compact('opcionesItver','opcionesGlobal','classFieldset'));
 	}
